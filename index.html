@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Tirth Studio | Best Photography Studio in Ahmedabad</title>
+<meta name="description" content="Gujarat’s biggest theme-based indoor & outdoor photography studio. Newborn, Kids, Maternity, Family & Pre-wedding shoots with 100MP camera quality.">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+body {
+  margin:0;
+  font-family:'Poppins',sans-serif;
+  background:#000;
+  color:#fff;
+}
+
+header {
+  text-align:center;
+  padding:80px 20px;
+  background:url('hero-main.jpg') center/cover no-repeat;
+}
+
+h1 {font-size:36px;}
+section {padding:50px 20px;}
+
+.buttons {
+  text-align:center;
+  margin-bottom:20px;
+}
+
+.buttons button {
+  padding:10px 15px;
+  margin:5px;
+  border:none;
+  background:#fff;
+  color:#000;
+  border-radius:20px;
+  cursor:pointer;
+}
+
+.portfolio {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:15px;
+}
+
+.portfolio img {
+  width:100%;
+  border-radius:12px;
+  transition:0.3s;
+}
+
+.portfolio img:hover {
+  transform:scale(1.05);
+}
+
+.slider {
+  position:relative;
+  max-width:500px;
+  margin:auto;
+}
+
+.slider img {
+  width:100%;
+  border-radius:10px;
+}
+
+.slider input {
+  width:100%;
+}
+
+.video {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:15px;
+}
+
+video {
+  width:100%;
+  border-radius:10px;
+}
+
+.whatsapp {
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  background:#25D366;
+  color:#fff;
+  padding:15px;
+  border-radius:50%;
+  font-size:20px;
+  text-decoration:none;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>Tirth Studio</h1>
+  <p>Ahmedabad’s Largest Theme-Based Photography Studio</p>
+</header>
+
+<section>
+<h2>Portfolio</h2>
+
+<div class="buttons">
+  <button onclick="filter('all')">All</button>
+  <button onclick="filter('kids')">Kids</button>
+  <button onclick="filter('maternity')">Maternity</button>
+  <button onclick="filter('newborn')">Newborn</button>
+</div>
+
+<div class="portfolio" id="gallery"></div>
+
+</section>
+
+<section>
+<h2>Before / After Editing</h2>
+<div class="slider">
+  <img src="edit-before.jpg">
+  <img src="edit-after.jpg" id="after" style="position:absolute;top:0;left:0;clip-path: inset(0 50% 0 0);">
+  <input type="range" min="0" max="100" value="50" oninput="slide(this.value)">
+</div>
+</section>
+
+<section>
+<h2>Videography</h2>
+<div class="video" id="videos"></div>
+</section>
+
+<a class="whatsapp" href="https://wa.me/917624029370">💬</a>
+
+<script>
+
+const portfolioData = [
+  {category:'kids', src:'portfolio/kids-1.jpg'},
+  {category:'kids', src:'portfolio/kids-2.jpg'},
+  {category:'maternity', src:'portfolio/maternity-1.jpg'},
+  {category:'newborn', src:'portfolio/newborn-1.jpg'}
+];
+
+const videoData = [
+  {src:'videos/reel-1.mp4'}
+];
+
+function loadGallery(filterType='all'){
+  const gallery = document.getElementById('gallery');
+  gallery.innerHTML = '';
+  portfolioData.forEach(item=>{
+    if(filterType==='all' || item.category===filterType){
+      const img = document.createElement('img');
+      img.src = item.src;
+      gallery.appendChild(img);
+    }
+  });
+}
+
+function filter(type){
+  loadGallery(type);
+}
+
+function slide(val){
+  document.getElementById("after").style.clipPath = `inset(0 ${100-val}% 0 0)`;
+}
+
+function loadVideos(){
+  const container = document.getElementById('videos');
+  videoData.forEach(v=>{
+    const vid = document.createElement('video');
+    vid.src = v.src;
+    vid.controls = true;
+    container.appendChild(vid);
+  });
+}
+
+loadGallery();
+loadVideos();
+
+</script>
+
+</body>
+</html>
