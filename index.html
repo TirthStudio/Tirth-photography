@@ -1,186 +1,1083 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Best Photography Studio in Ahmedabad | Kids, Maternity, Pre Wedding | Tirth Studio</title>
+  <meta name="description" content="Gujarat’s biggest indoor & outdoor theme-based photography studio with 1500+ themes. 100MP ultra HD photography, cinematic videography & drone shoots in Ahmedabad." />
+  <meta name="keywords" content="photography studio in Ahmedabad, kids photography Ahmedabad, maternity shoot Ahmedabad, pre wedding shoot Ahmedabad, newborn photography Ahmedabad, family photography Ahmedabad, cinematic videography Ahmedabad, drone shoot Ahmedabad, best photo studio in Gujarat, indoor outdoor photo studio Ahmedabad" />
+  <meta name="author" content="Tirth Studio" />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#111111" />
+  <meta property="og:title" content="Best Photography Studio in Ahmedabad | Tirth Studio" />
+  <meta property="og:description" content="1500+ theme-based indoor & outdoor photo shoot setups, 100MP ultra HD photography, cinematic videography and drone shoots in Ahmedabad." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="assets/og-cover.jpg" />
+  <meta property="og:locale" content="en_IN" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Best Photography Studio in Ahmedabad | Tirth Studio" />
+  <meta name="twitter:description" content="Gujarat’s biggest indoor & outdoor theme-based photography studio with 1500+ themes and cinematic videography." />
+  <link rel="canonical" href="https://www.tirthstudio.com/" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-<title>Tirth Studio | Best Photography Studio in Ahmedabad</title>
-<meta name="description" content="Gujarat’s biggest theme-based indoor & outdoor photography studio. Newborn, Kids, Maternity, Family & Pre-wedding shoots with 100MP camera quality.">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Tirth Studio",
+    "image": "https://www.tirthstudio.com/assets/og-cover.jpg",
+    "url": "https://www.tirthstudio.com/",
+    "telephone": "+91-7624029370",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "178 - Phase 2, Besides Rayka Hostel, Greenwood, Near Vaishnavdevi Circle",
+      "addressLocality": "Ahmedabad",
+      "addressRegion": "Gujarat",
+      "postalCode": "380000",
+      "addressCountry": "IN"
+    },
+    "areaServed": "Ahmedabad",
+    "priceRange": "₹₹",
+    "description": "Gujarat’s biggest indoor and outdoor theme-based photography studio with 1500+ themes, 100MP photography, cinematic videography, reels, storytelling videos, and drone services.",
+    "sameAs": [
+      "https://www.instagram.com/tirthstudio/"
+    ]
+  }
+  </script>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-
-<style>
-body {
-  margin:0;
-  font-family:'Poppins',sans-serif;
-  background:#000;
-  color:#fff;
-}
-
-header {
-  text-align:center;
-  padding:80px 20px;
-  background:url('hero-main.jpg') center/cover no-repeat;
-}
-
-h1 {font-size:36px;}
-section {padding:50px 20px;}
-
-.buttons {
-  text-align:center;
-  margin-bottom:20px;
-}
-
-.buttons button {
-  padding:10px 15px;
-  margin:5px;
-  border:none;
-  background:#fff;
-  color:#000;
-  border-radius:20px;
-  cursor:pointer;
-}
-
-.portfolio {
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-  gap:15px;
-}
-
-.portfolio img {
-  width:100%;
-  border-radius:12px;
-  transition:0.3s;
-}
-
-.portfolio img:hover {
-  transform:scale(1.05);
-}
-
-.slider {
-  position:relative;
-  max-width:500px;
-  margin:auto;
-}
-
-.slider img {
-  width:100%;
-  border-radius:10px;
-}
-
-.slider input {
-  width:100%;
-}
-
-.video {
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-  gap:15px;
-}
-
-video {
-  width:100%;
-  border-radius:10px;
-}
-
-.whatsapp {
-  position:fixed;
-  bottom:20px;
-  right:20px;
-  background:#25D366;
-  color:#fff;
-  padding:15px;
-  border-radius:50%;
-  font-size:20px;
-  text-decoration:none;
-}
-</style>
-</head>
-
-<body>
-
-<header>
-  <h1>Tirth Studio</h1>
-  <p>Ahmedabad’s Largest Theme-Based Photography Studio</p>
-</header>
-
-<section>
-<h2>Portfolio</h2>
-
-<div class="buttons">
-  <button onclick="filter('all')">All</button>
-  <button onclick="filter('kids')">Kids</button>
-  <button onclick="filter('maternity')">Maternity</button>
-  <button onclick="filter('newborn')">Newborn</button>
-</div>
-
-<div class="portfolio" id="gallery"></div>
-
-</section>
-
-<section>
-<h2>Before / After Editing</h2>
-<div class="slider">
-  <img src="edit-before.jpg">
-  <img src="edit-after.jpg" id="after" style="position:absolute;top:0;left:0;clip-path: inset(0 50% 0 0);">
-  <input type="range" min="0" max="100" value="50" oninput="slide(this.value)">
-</div>
-</section>
-
-<section>
-<h2>Videography</h2>
-<div class="video" id="videos"></div>
-</section>
-
-<a class="whatsapp" href="https://wa.me/917624029370">💬</a>
-
-<script>
-
-const portfolioData = [
-  {category:'kids', src:'portfolio/kids-1.jpg'},
-  {category:'kids', src:'portfolio/kids-2.jpg'},
-  {category:'maternity', src:'portfolio/maternity-1.jpg'},
-  {category:'newborn', src:'portfolio/newborn-1.jpg'}
-];
-
-const videoData = [
-  {src:'videos/reel-1.mp4'}
-];
-
-function loadGallery(filterType='all'){
-  const gallery = document.getElementById('gallery');
-  gallery.innerHTML = '';
-  portfolioData.forEach(item=>{
-    if(filterType==='all' || item.category===filterType){
-      const img = document.createElement('img');
-      img.src = item.src;
-      gallery.appendChild(img);
+  <style>
+    :root {
+      --bg: #0d0d0f;
+      --bg-soft: #16161a;
+      --card: rgba(255,255,255,0.05);
+      --card-border: rgba(255,255,255,0.08);
+      --text: #f6f1e9;
+      --muted: #c6c0b6;
+      --gold: #d4af6a;
+      --gold-soft: rgba(212,175,106,0.15);
+      --shadow: 0 20px 60px rgba(0,0,0,0.35);
+      --radius: 24px;
+      --container: 1200px;
+      --section-gap: 110px;
     }
-  });
-}
 
-function filter(type){
-  loadGallery(type);
-}
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background:
+        radial-gradient(circle at top right, rgba(212,175,106,0.14), transparent 25%),
+        radial-gradient(circle at top left, rgba(255,255,255,0.04), transparent 20%),
+        var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    img, video { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+    button { font: inherit; }
 
-function slide(val){
-  document.getElementById("after").style.clipPath = `inset(0 ${100-val}% 0 0)`;
-}
+    .container { width: min(var(--container), calc(100% - 32px)); margin: 0 auto; }
+    .section { padding: 0 0 var(--section-gap); }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 12px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+      background: var(--gold-soft);
+      border: 1px solid rgba(212,175,106,0.22);
+      padding: 10px 14px;
+      border-radius: 999px;
+      margin-bottom: 18px;
+    }
+    .title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.3rem, 5vw, 4.8rem);
+      line-height: 0.98;
+      margin: 0 0 18px;
+      letter-spacing: -0.02em;
+    }
+    .section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2rem, 4vw, 3.4rem);
+      margin: 0 0 10px;
+      line-height: 1.05;
+    }
+    .lead, .section-copy {
+      color: var(--muted);
+      font-size: 1.02rem;
+      max-width: 720px;
+    }
 
-function loadVideos(){
-  const container = document.getElementById('videos');
-  videoData.forEach(v=>{
-    const vid = document.createElement('video');
-    vid.src = v.src;
-    vid.controls = true;
-    container.appendChild(vid);
-  });
-}
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      backdrop-filter: blur(18px);
+      background: rgba(13,13,15,0.72);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 74px;
+      gap: 16px;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      min-width: 0;
+    }
+    .brand-mark {
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      background: linear-gradient(145deg, rgba(212,175,106,0.24), rgba(255,255,255,0.06));
+      border: 1px solid rgba(212,175,106,0.24);
+      display: grid;
+      place-items: center;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.2rem;
+      color: var(--gold);
+      flex-shrink: 0;
+    }
+    .brand-text strong {
+      display: block;
+      font-size: 1rem;
+      letter-spacing: 0.02em;
+    }
+    .brand-text span {
+      font-size: 0.82rem;
+      color: var(--muted);
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+    .nav-links a {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+    .nav-links a:hover { color: var(--text); }
+    .nav-cta {
+      padding: 12px 18px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, #d4af6a, #f5deb3);
+      color: #111;
+      font-weight: 700;
+      box-shadow: var(--shadow);
+    }
 
-loadGallery();
-loadVideos();
+    .hero {
+      padding: 72px 0 90px;
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 28px;
+      align-items: stretch;
+    }
+    .hero-copy, .hero-card {
+      background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.03));
+      border: 1px solid var(--card-border);
+      border-radius: 32px;
+      box-shadow: var(--shadow);
+    }
+    .hero-copy {
+      padding: clamp(26px, 4vw, 48px);
+    }
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 26px;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 14px 22px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.1);
+      color: var(--text);
+      background: rgba(255,255,255,0.05);
+      font-weight: 700;
+      cursor: pointer;
+      transition: transform 0.2s ease, background 0.2s ease;
+    }
+    .btn:hover { transform: translateY(-2px); }
+    .btn-primary {
+      background: linear-gradient(135deg, #d4af6a, #f4e2b8);
+      color: #111;
+      border: none;
+    }
+    .hero-highlights {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 28px;
+    }
+    .mini-card {
+      padding: 16px;
+      border-radius: 22px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+    .mini-card strong {
+      display: block;
+      font-size: 1.1rem;
+      margin-bottom: 4px;
+      color: var(--gold);
+    }
+    .mini-card span {
+      color: var(--muted);
+      font-size: 0.93rem;
+    }
 
-</script>
+    .hero-card {
+      padding: 18px;
+      display: grid;
+      gap: 16px;
+    }
+    .hero-image {
+      border-radius: 24px;
+      overflow: hidden;
+      aspect-ratio: 4 / 5;
+      background: #1b1b1f;
+      position: relative;
+    }
+    .hero-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .hero-badges {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+    }
+    .badge {
+      padding: 14px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      text-align: center;
+    }
+    .badge strong { display: block; color: var(--gold); font-size: 1.1rem; }
+    .badge span { color: var(--muted); font-size: 0.84rem; }
 
+    .stats-grid, .services-grid, .feature-grid, .editing-grid, .contact-grid, .seo-grid {
+      display: grid;
+      gap: 18px;
+    }
+    .stats-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+    .services-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .feature-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .editing-grid, .contact-grid { grid-template-columns: 1.1fr 0.9fr; }
+    .seo-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius);
+      padding: 24px;
+      box-shadow: var(--shadow);
+    }
+    .service-card h3, .feature-card h3, .seo-card h3, .contact-card h3 { margin-top: 0; margin-bottom: 8px; }
+    .service-card p, .feature-card p, .seo-card p, .contact-card p { color: var(--muted); margin: 0; }
+    .service-icon, .feature-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 16px;
+      background: var(--gold-soft);
+      border: 1px solid rgba(212,175,106,0.22);
+      display: grid;
+      place-items: center;
+      margin-bottom: 16px;
+      color: var(--gold);
+      font-weight: 800;
+    }
+
+    .portfolio-controls {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin: 24px 0 18px;
+    }
+    .chip {
+      padding: 11px 16px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.1);
+      background: rgba(255,255,255,0.04);
+      color: var(--text);
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .chip.active, .chip:hover {
+      background: linear-gradient(135deg, #d4af6a, #f4e2b8);
+      color: #111;
+      border-color: transparent;
+    }
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+    }
+    .portfolio-item {
+      position: relative;
+      overflow: hidden;
+      border-radius: 24px;
+      background: #17171b;
+      border: 1px solid rgba(255,255,255,0.06);
+      min-height: 260px;
+      aspect-ratio: 4 / 5;
+      cursor: pointer;
+    }
+    .portfolio-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+    .portfolio-item:hover img { transform: scale(1.05); }
+    .portfolio-caption {
+      position: absolute;
+      inset: auto 14px 14px 14px;
+      padding: 12px 14px;
+      border-radius: 18px;
+      background: linear-gradient(180deg, rgba(0,0,0,0.15), rgba(0,0,0,0.72));
+      backdrop-filter: blur(8px);
+      font-size: 0.95rem;
+    }
+
+    .slider-shell {
+      position: relative;
+      width: 100%;
+      max-width: 900px;
+      aspect-ratio: 16 / 10;
+      border-radius: 28px;
+      overflow: hidden;
+      background: #131316;
+      border: 1px solid rgba(255,255,255,0.08);
+      box-shadow: var(--shadow);
+      margin-top: 26px;
+    }
+    .slider-layer {
+      position: absolute;
+      inset: 0;
+    }
+    .slider-layer img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      user-select: none;
+      pointer-events: none;
+    }
+    .slider-after {
+      clip-path: inset(0 0 0 50%);
+    }
+    .slider-line {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      width: 2px;
+      background: rgba(255,255,255,0.9);
+      box-shadow: 0 0 0 1px rgba(0,0,0,0.1);
+      transform: translateX(-50%);
+      z-index: 3;
+    }
+    .slider-handle {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      background: white;
+      color: #111;
+      display: grid;
+      place-items: center;
+      font-weight: 800;
+      transform: translate(-50%, -50%);
+      z-index: 4;
+      box-shadow: 0 12px 26px rgba(0,0,0,0.3);
+      pointer-events: none;
+    }
+    .slider-range {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      cursor: ew-resize;
+      z-index: 10;
+    }
+    .slider-label {
+      position: absolute;
+      top: 16px;
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: rgba(0,0,0,0.55);
+      backdrop-filter: blur(10px);
+      font-size: 0.85rem;
+      font-weight: 700;
+      z-index: 4;
+    }
+    .slider-label.before { left: 16px; }
+    .slider-label.after { right: 16px; }
+
+    .editing-list, .seo-list, .contact-list {
+      display: grid;
+      gap: 12px;
+      margin-top: 18px;
+    }
+    .bullet {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      color: var(--muted);
+    }
+    .bullet-mark {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: var(--gold-soft);
+      border: 1px solid rgba(212,175,106,0.22);
+      display: grid;
+      place-items: center;
+      color: var(--gold);
+      font-size: 0.8rem;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+      margin-top: 24px;
+    }
+    .video-card {
+      overflow: hidden;
+      border-radius: 24px;
+      background: #151518;
+      border: 1px solid rgba(255,255,255,0.06);
+    }
+    .video-card video {
+      width: 100%;
+      aspect-ratio: 9 / 16;
+      object-fit: cover;
+      background: #000;
+    }
+    .video-card .meta {
+      padding: 16px;
+    }
+    .video-card h3 {
+      margin: 0 0 6px;
+      font-size: 1rem;
+    }
+    .video-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.93rem;
+    }
+
+    .contact-card strong {
+      color: var(--text);
+    }
+    .contact-map {
+      overflow: hidden;
+      border-radius: 24px;
+      min-height: 100%;
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+    .contact-map iframe {
+      width: 100%;
+      min-height: 100%;
+      height: 100%;
+      border: 0;
+      filter: grayscale(1) contrast(1.1) brightness(0.85);
+    }
+
+    .footer {
+      padding: 28px 0 40px;
+      border-top: 1px solid rgba(255,255,255,0.06);
+      color: var(--muted);
+      font-size: 0.94rem;
+    }
+    .footer-grid {
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    .whatsapp-float {
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      z-index: 1200;
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      background: #25D366;
+      color: white;
+      padding: 14px 18px;
+      border-radius: 999px;
+      box-shadow: 0 16px 38px rgba(37, 211, 102, 0.32);
+      font-weight: 800;
+    }
+    .whatsapp-icon {
+      width: 24px;
+      height: 24px;
+      flex-shrink: 0;
+    }
+
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.86);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 2000;
+      padding: 24px;
+    }
+    .lightbox.open { display: flex; }
+    .lightbox-inner {
+      max-width: min(92vw, 1100px);
+      max-height: 90vh;
+      position: relative;
+    }
+    .lightbox img {
+      max-width: 100%;
+      max-height: 90vh;
+      object-fit: contain;
+      border-radius: 18px;
+    }
+    .lightbox-close {
+      position: absolute;
+      top: -14px;
+      right: -14px;
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      border: none;
+      background: white;
+      color: #111;
+      font-size: 1.4rem;
+      cursor: pointer;
+    }
+
+    @media (max-width: 1100px) {
+      .hero-grid,
+      .editing-grid,
+      .contact-grid,
+      .seo-grid,
+      .services-grid,
+      .feature-grid,
+      .stats-grid,
+      .video-grid,
+      .portfolio-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+      .hero-grid { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 720px) {
+      :root { --section-gap: 84px; }
+      .nav { align-items: flex-start; padding: 12px 0; }
+      .nav-links { gap: 12px; }
+      .nav-links a:not(.nav-cta) { display: none; }
+      .hero,
+      .section { padding-bottom: 84px; }
+      .hero-badges,
+      .hero-highlights,
+      .services-grid,
+      .feature-grid,
+      .editing-grid,
+      .contact-grid,
+      .seo-grid,
+      .stats-grid,
+      .video-grid,
+      .portfolio-grid {
+        grid-template-columns: 1fr;
+      }
+      .hero-actions { flex-direction: column; align-items: stretch; }
+      .whatsapp-float span { display: none; }
+      .whatsapp-float { padding: 14px; border-radius: 50%; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <a href="#home" class="brand" aria-label="Tirth Studio home">
+        <div class="brand-mark">TS</div>
+        <div class="brand-text">
+          <strong>Tirth Studio</strong>
+          <span>Ahmedabad Premium Photography</span>
+        </div>
+      </a>
+
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="#services">Services</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#editing">Editing</a>
+        <a href="#videography">Videography</a>
+        <a href="#contact">Contact</a>
+        <a class="nav-cta" href="https://wa.me/917624029370?text=Hi%20Tirth%20Studio%2C%20I%20want%20to%20book%20a%20photoshoot.">Book on WhatsApp</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <div class="eyebrow">Gujarat’s Biggest Theme-Based Photo Studio</div>
+          <h1 class="title">Indoor & Outdoor Theme-Based Photoshoots, Cinematic Reels and 100MP Ultra Detail — All at One Place.</h1>
+          <p class="lead">
+            Tirth Studio offers 1500+ indoor and outdoor theme options for newborn, kids, maternity, family and pre-wedding photoshoots in Ahmedabad. We also create cinematic reels, storytelling films and drone videos with premium production quality.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="https://wa.me/917624029370?text=Hi%20Tirth%20Studio%2C%20I%20want%20to%20book%20a%20photoshoot.">Book Your Shoot</a>
+            <a class="btn" href="#portfolio">Explore Portfolio</a>
+          </div>
+          <div class="hero-highlights">
+            <div class="mini-card">
+              <strong>1500+</strong>
+              <span>Theme options to choose from</span>
+            </div>
+            <div class="mini-card">
+              <strong>100MP</strong>
+              <span>Ultra-high detail camera output</span>
+            </div>
+            <div class="mini-card">
+              <strong>Indoor + Outdoor</strong>
+              <span>Setups available at one single place</span>
+            </div>
+            <div class="mini-card">
+              <strong>Reels + Drone</strong>
+              <span>Cinematic videography services</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-card">
+          <div class="hero-image">
+            <img src="assets/hero-main.jpg" alt="Premium themed photoshoot at Tirth Studio Ahmedabad" loading="eager" />
+          </div>
+          <div class="hero-badges">
+            <div class="badge">
+              <strong>Newborn</strong>
+              <span>Safe themed setups</span>
+            </div>
+            <div class="badge">
+              <strong>Maternity</strong>
+              <span>Elegant portraits</span>
+            </div>
+            <div class="badge">
+              <strong>Pre-Wedding</strong>
+              <span>Cinematic storytelling</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="stats-grid">
+          <div class="card">
+            <div class="eyebrow">USP</div>
+            <h3>Huge Enlargement Quality</h3>
+            <p class="section-copy">100 megapixel capture means sharper details, better skin texture, premium albums and large-size photo enlargement without compromise.</p>
+          </div>
+          <div class="card">
+            <div class="eyebrow">Studio Advantage</div>
+            <h3>All-in-One Location</h3>
+            <p class="section-copy">Indoor and outdoor shoot setups available at one studio location near Vaishnavdevi Circle, Ahmedabad.</p>
+          </div>
+          <div class="card">
+            <div class="eyebrow">Content Creation</div>
+            <h3>Short + Long Videos</h3>
+            <p class="section-copy">We produce short reels, cinematic highlight edits and long storytelling videos for memorable delivery.</p>
+          </div>
+          <div class="card">
+            <div class="eyebrow">Booking</div>
+            <h3>WhatsApp First</h3>
+            <p class="section-copy">Fast booking support, theme discussion, pricing help and appointment coordination directly on WhatsApp.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="services">
+      <div class="container">
+        <div class="eyebrow">Photography Services in Ahmedabad</div>
+        <h2 class="section-title">Photoshoot Experiences Designed for Every Stage of Life.</h2>
+        <p class="section-copy">From newborn memories to pre-wedding stories, our studio is built to offer premium visuals, creative themes and comfortable shooting experiences for every client.</p>
+
+        <div class="services-grid" style="margin-top:24px;">
+          <article class="card service-card">
+            <div class="service-icon">01</div>
+            <h3>Newborn Photography</h3>
+            <p>Soft, safe and artistic newborn photoshoots with curated props, dreamy setups and premium retouching for timeless baby portraits.</p>
+          </article>
+          <article class="card service-card">
+            <div class="service-icon">02</div>
+            <h3>Kids Photography</h3>
+            <p>Fun and expressive kids photoshoots with creative concepts, fantasy scenes and theme-based setups designed to make every frame lively.</p>
+          </article>
+          <article class="card service-card">
+            <div class="service-icon">03</div>
+            <h3>Maternity Photoshoot</h3>
+            <p>Elegant maternity portraits with indoor and outdoor concepts, flattering lighting and cinematic styling for emotional motherhood memories.</p>
+          </article>
+          <article class="card service-card">
+            <div class="service-icon">04</div>
+            <h3>Family Photography</h3>
+            <p>Warm and premium family portrait sessions that preserve natural interactions, genuine smiles and beautiful togetherness.</p>
+          </article>
+          <article class="card service-card">
+            <div class="service-icon">05</div>
+            <h3>Pre-Wedding Shoot</h3>
+            <p>Story-driven pre-wedding photography with cinematic poses, luxury compositions and emotional couple storytelling.</p>
+          </article>
+          <article class="card service-card">
+            <div class="service-icon">06</div>
+            <h3>Theme-Based Indoor + Outdoor Shoots</h3>
+            <p>Choose from more than 1500 themes, all available at one single location, making Tirth Studio one of the most versatile photoshoot destinations in Gujarat.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="eyebrow">Why Tirth Studio</div>
+        <h2 class="section-title">Why Families Choose Our Studio Again and Again.</h2>
+        <p class="section-copy">A strong blend of creativity, detailing, space, technology and delivery makes our studio ideal for premium photos and video content.</p>
+
+        <div class="feature-grid" style="margin-top:24px;">
+          <article class="card feature-card">
+            <div class="feature-icon">A</div>
+            <h3>1500+ Theme Selections</h3>
+            <p>Huge variety of concepts for babies, kids, maternity, family and couples, so every shoot feels unique and personalized.</p>
+          </article>
+          <article class="card feature-card">
+            <div class="feature-icon">B</div>
+            <h3>100MP High Detailing</h3>
+            <p>Premium image quality for close-up detail, sharp textures, professional album design and large display prints.</p>
+          </article>
+          <article class="card feature-card">
+            <div class="feature-icon">C</div>
+            <h3>Cinematic Production</h3>
+            <p>Reels, storytelling videos and drone coverage make your memories feel more dynamic, emotional and modern.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="portfolio">
+      <div class="container">
+        <div class="eyebrow">Portfolio Gallery</div>
+        <h2 class="section-title">A Portfolio Built to Scale With Unlimited Photos Per Category.</h2>
+        <p class="section-copy">You can add as many images as you want for each category. Just duplicate entries inside the <strong>portfolioData</strong> array in the script section at the bottom of this file.</p>
+
+        <div class="portfolio-controls" id="portfolioControls"></div>
+        <div class="portfolio-grid" id="portfolioGrid"></div>
+      </div>
+    </section>
+
+    <section class="section" id="editing">
+      <div class="container editing-grid">
+        <div>
+          <div class="eyebrow">Premium Photo Editing</div>
+          <h2 class="section-title">Before / After Reveal With a Real Slider Experience.</h2>
+          <p class="section-copy">Showcase your professional editing quality with an interactive before-after slider. This section is perfect for skin retouching, background replacement, cinematic color grading, lighting correction and premium compositing work.</p>
+
+          <div class="slider-shell" id="beforeAfterSlider">
+            <div class="slider-layer slider-before">
+              <img src="assets/edit-before.jpg" alt="Before photo edit by Tirth Studio" />
+            </div>
+            <div class="slider-layer slider-after" id="sliderAfterLayer">
+              <img src="assets/edit-after.jpg" alt="After photo edit by Tirth Studio" />
+            </div>
+            <div class="slider-label before">Before</div>
+            <div class="slider-label after">After</div>
+            <div class="slider-line" id="sliderLine"></div>
+            <div class="slider-handle" id="sliderHandle">↔</div>
+            <input class="slider-range" id="sliderRange" type="range" min="0" max="100" value="50" aria-label="Before after comparison slider" />
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="eyebrow">Editing Highlights</div>
+          <h3 style="margin-top:0;">Show Your Strongest Editing USP</h3>
+          <p class="section-copy">Use this area to build trust around the quality of your post-production work and make visitors understand the premium level of your output.</p>
+          <div class="editing-list">
+            <div class="bullet"><div class="bullet-mark">✓</div><div>100% skin texture preserved editing style</div></div>
+            <div class="bullet"><div class="bullet-mark">✓</div><div>Natural retouching without fake blur or plastic skin</div></div>
+            <div class="bullet"><div class="bullet-mark">✓</div><div>Premium cinematic color grading and light balancing</div></div>
+            <div class="bullet"><div class="bullet-mark">✓</div><div>Creative background compositing and theme enhancement</div></div>
+            <div class="bullet"><div class="bullet-mark">✓</div><div>Ideal for social media reveals, large prints and premium albums</div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="videography">
+      <div class="container">
+        <div class="eyebrow">Cinematic Videography</div>
+        <h2 class="section-title">Upload Short Reels, Storytelling Videos and Drone Shots.</h2>
+        <p class="section-copy">This section is ready for vertical reels and premium video showcases. Replace the sample video paths in the <strong>videoData</strong> array with your own video files and thumbnails.</p>
+        <div class="video-grid" id="videoGrid"></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container seo-grid">
+        <div class="card seo-card">
+          <div class="eyebrow">SEO Strength</div>
+          <h3>SEO-Friendly Content Built In</h3>
+          <p>This homepage already includes title tag, meta description, location-based keywords, structured data and service-rich copy to improve visibility for Ahmedabad photography searches.</p>
+          <div class="seo-list">
+            <div class="bullet"><div class="bullet-mark">01</div><div>Targets keywords like photography studio in Ahmedabad, kids photography Ahmedabad, maternity shoot Ahmedabad and pre-wedding shoot Ahmedabad.</div></div>
+            <div class="bullet"><div class="bullet-mark">02</div><div>Local business schema helps search engines understand your brand, contact details and location.</div></div>
+            <div class="bullet"><div class="bullet-mark">03</div><div>High-intent sections improve relevance for both photography and videography services.</div></div>
+          </div>
+        </div>
+        <div class="card seo-card">
+          <div class="eyebrow">Suggested Next SEO Steps</div>
+          <h3>To Rank Better on Google</h3>
+          <p>Add Google reviews, real client testimonials, original portfolio images with descriptive alt text, fast-loading compressed media and dedicated city/service pages later.</p>
+          <div class="seo-list">
+            <div class="bullet"><div class="bullet-mark">A</div><div>Create separate pages later for newborn, kids, maternity, family and pre-wedding photoshoots.</div></div>
+            <div class="bullet"><div class="bullet-mark">B</div><div>Add a Google Business Profile link and embed reviews from real clients.</div></div>
+            <div class="bullet"><div class="bullet-mark">C</div><div>Upload original images with filenames like kids-photoshoot-ahmedabad-1.jpg for better image SEO.</div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="container contact-grid">
+        <div class="card contact-card">
+          <div class="eyebrow">Contact & Location</div>
+          <h2 class="section-title">Book Your Photoshoot or Videography Session.</h2>
+          <p class="section-copy">Get in touch for booking, pricing, theme selection and shoot planning. WhatsApp is the fastest way to connect.</p>
+
+          <div class="contact-list">
+            <div class="bullet"><div class="bullet-mark">☎</div><div><strong>Phone / WhatsApp:</strong> <a href="tel:+917624029370">7624029370</a></div></div>
+            <div class="bullet"><div class="bullet-mark">📍</div><div><strong>Studio Address:</strong> 178 - Phase 2, Besides Rayka Hostel, Greenwood, Near Vaishnavdevi Circle, Ahmedabad</div></div>
+            <div class="bullet"><div class="bullet-mark">🕒</div><div><strong>Service Type:</strong> Newborn, Kids, Maternity, Family, Pre-Wedding, Photo Editing, Reels, Storytelling Videos and Drone Shoots</div></div>
+          </div>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="https://wa.me/917624029370?text=Hi%20Tirth%20Studio%2C%20I%20want%20to%20book%20a%20photoshoot.">Chat on WhatsApp</a>
+            <a class="btn" target="_blank" rel="noopener" href="https://maps.google.com/?q=178%20Phase%202%20Besides%20Rayka%20Hostel%20Greenwood%20Near%20Vaishnavdevi%20Circle%20Ahmedabad">Open in Maps</a>
+          </div>
+        </div>
+
+        <div class="contact-map card" style="padding:0;">
+          <iframe title="Tirth Studio location map" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=178%20Phase%202%20Besides%20Rayka%20Hostel%20Greenwood%20Near%20Vaishnavdevi%20Circle%20Ahmedabad&output=embed"></iframe>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div>© <span id="year"></span> Tirth Studio. All rights reserved.</div>
+      <div>Best Photography Studio in Ahmedabad for Kids, Newborn, Maternity, Family and Pre-Wedding Shoots.</div>
+    </div>
+  </footer>
+
+  <a class="whatsapp-float" href="https://wa.me/917624029370?text=Hi%20Tirth%20Studio%2C%20I%20want%20to%20book%20a%20photoshoot." aria-label="Chat on WhatsApp">
+    <svg class="whatsapp-icon" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true">
+      <path d="M19.11 17.33c-.27-.14-1.58-.78-1.83-.87-.24-.09-.42-.14-.6.14-.18.27-.69.87-.84 1.05-.16.18-.31.2-.58.07-.27-.14-1.13-.42-2.16-1.34-.8-.71-1.34-1.59-1.49-1.86-.16-.27-.02-.41.12-.55.12-.12.27-.31.4-.47.13-.16.18-.27.27-.45.09-.18.04-.34-.02-.47-.07-.14-.6-1.45-.82-1.99-.22-.53-.44-.46-.6-.47h-.51c-.18 0-.47.07-.71.34-.24.27-.93.91-.93 2.23 0 1.31.95 2.58 1.09 2.76.13.18 1.87 2.85 4.52 4 .63.27 1.12.43 1.5.55.63.2 1.21.17 1.67.1.51-.08 1.58-.64 1.8-1.27.22-.63.22-1.16.16-1.27-.07-.11-.25-.18-.51-.31Z"/>
+      <path d="M27.27 4.73A15.84 15.84 0 0 0 16.01 0C7.19 0 0 7.18 0 16c0 2.82.74 5.58 2.14 8L0 32l8.23-2.1A15.96 15.96 0 0 0 16 32c8.82 0 16-7.18 16-16 0-4.27-1.66-8.28-4.73-11.27ZM16 29.14c-2.47 0-4.88-.66-6.99-1.9l-.5-.3-4.88 1.24 1.3-4.76-.32-.49A13.08 13.08 0 0 1 2.86 16C2.86 8.9 8.9 2.86 16 2.86c3.49 0 6.77 1.36 9.24 3.83A12.97 12.97 0 0 1 29.14 16c0 7.1-6.04 13.14-13.14 13.14Z"/>
+    </svg>
+    <span>WhatsApp</span>
+  </a>
+
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <div class="lightbox-inner">
+      <button class="lightbox-close" id="lightboxClose" aria-label="Close image">×</button>
+      <img id="lightboxImage" src="" alt="Expanded portfolio image" />
+    </div>
+  </div>
+
+  <script>
+    const portfolioData = {
+      all: [
+        { category: 'newborn', src: 'assets/portfolio/newborn-1.jpg', alt: 'Newborn photography setup in Ahmedabad', title: 'Newborn Theme Setup' },
+        { category: 'kids', src: 'assets/portfolio/kids-1.jpg', alt: 'Kids photography theme shoot in Ahmedabad', title: 'Kids Creative Portrait' },
+        { category: 'maternity', src: 'assets/portfolio/maternity-1.jpg', alt: 'Maternity photoshoot in Ahmedabad', title: 'Elegant Maternity Shoot' },
+        { category: 'family', src: 'assets/portfolio/family-1.jpg', alt: 'Family photography at Tirth Studio Ahmedabad', title: 'Family Memories' },
+        { category: 'prewedding', src: 'assets/portfolio/prewedding-1.jpg', alt: 'Pre wedding cinematic photography in Ahmedabad', title: 'Cinematic Pre-Wedding' },
+        { category: 'kids', src: 'assets/portfolio/kids-2.jpg', alt: 'Kids outdoor photoshoot in Ahmedabad', title: 'Outdoor Kids Theme' }
+      ],
+      newborn: [],
+      kids: [],
+      maternity: [],
+      family: [],
+      prewedding: []
+    };
+
+    const videoData = [
+      {
+        src: 'assets/videos/reel-1.mp4',
+        title: 'Kids Photoshoot Reel',
+        description: 'Vertical short reel for social media showcase.',
+        poster: 'assets/videos/poster-1.jpg'
+      },
+      {
+        src: 'assets/videos/reel-2.mp4',
+        title: 'Maternity Storytelling Film',
+        description: 'Premium cinematic video preview.',
+        poster: 'assets/videos/poster-2.jpg'
+      },
+      {
+        src: 'assets/videos/reel-3.mp4',
+        title: 'Pre-Wedding Drone Highlights',
+        description: 'Story-driven couple film with aerial coverage.',
+        poster: 'assets/videos/poster-3.jpg'
+      }
+    ];
+
+    const categoryLabels = {
+      all: 'All',
+      newborn: 'Newborn',
+      kids: 'Kids',
+      maternity: 'Maternity',
+      family: 'Family',
+      prewedding: 'Pre-Wedding'
+    };
+
+    const mergedPortfolio = {
+      all: portfolioData.all,
+      newborn: [...portfolioData.all.filter(item => item.category === 'newborn'), ...portfolioData.newborn],
+      kids: [...portfolioData.all.filter(item => item.category === 'kids'), ...portfolioData.kids],
+      maternity: [...portfolioData.all.filter(item => item.category === 'maternity'), ...portfolioData.maternity],
+      family: [...portfolioData.all.filter(item => item.category === 'family'), ...portfolioData.family],
+      prewedding: [...portfolioData.all.filter(item => item.category === 'prewedding'), ...portfolioData.prewedding]
+    };
+
+    const portfolioControls = document.getElementById('portfolioControls');
+    const portfolioGrid = document.getElementById('portfolioGrid');
+    const categories = Object.keys(categoryLabels);
+    let activeCategory = 'all';
+
+    function renderPortfolioControls() {
+      portfolioControls.innerHTML = categories.map(category => `
+        <button class="chip ${category === activeCategory ? 'active' : ''}" data-category="${category}">
+          ${categoryLabels[category]}
+        </button>
+      `).join('');
+
+      portfolioControls.querySelectorAll('.chip').forEach(button => {
+        button.addEventListener('click', () => {
+          activeCategory = button.dataset.category;
+          renderPortfolioControls();
+          renderPortfolioItems();
+        });
+      });
+    }
+
+    function renderPortfolioItems() {
+      const items = mergedPortfolio[activeCategory] || [];
+      portfolioGrid.innerHTML = items.map(item => `
+        <article class="portfolio-item" tabindex="0" data-full="${item.src}" aria-label="Open ${item.title}">
+          <img src="${item.src}" alt="${item.alt}" loading="lazy" />
+          <div class="portfolio-caption">${item.title}</div>
+        </article>
+      `).join('');
+
+      portfolioGrid.querySelectorAll('.portfolio-item').forEach(item => {
+        item.addEventListener('click', () => openLightbox(item.dataset.full));
+        item.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            openLightbox(item.dataset.full);
+          }
+        });
+      });
+    }
+
+    const videoGrid = document.getElementById('videoGrid');
+    function renderVideos() {
+      videoGrid.innerHTML = videoData.map(video => `
+        <article class="video-card">
+          <video controls playsinline preload="metadata" poster="${video.poster}">
+            <source src="${video.src}" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+          <div class="meta">
+            <h3>${video.title}</h3>
+            <p>${video.description}</p>
+          </div>
+        </article>
+      `).join('');
+    }
+
+    const sliderRange = document.getElementById('sliderRange');
+    const sliderAfterLayer = document.getElementById('sliderAfterLayer');
+    const sliderLine = document.getElementById('sliderLine');
+    const sliderHandle = document.getElementById('sliderHandle');
+
+    function updateSlider(value) {
+      const position = Number(value);
+      sliderAfterLayer.style.clipPath = `inset(0 0 0 ${position}%)`;
+      sliderLine.style.left = `${position}%`;
+      sliderHandle.style.left = `${position}%`;
+    }
+
+    sliderRange.addEventListener('input', (e) => updateSlider(e.target.value));
+    updateSlider(50);
+
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImage = document.getElementById('lightboxImage');
+    const lightboxClose = document.getElementById('lightboxClose');
+
+    function openLightbox(src) {
+      lightboxImage.src = src;
+      lightbox.classList.add('open');
+      lightbox.setAttribute('aria-hidden', 'false');
+    }
+
+    function closeLightbox() {
+      lightbox.classList.remove('open');
+      lightbox.setAttribute('aria-hidden', 'true');
+      lightboxImage.src = '';
+    }
+
+    lightboxClose.addEventListener('click', closeLightbox);
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox) closeLightbox();
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && lightbox.classList.contains('open')) closeLightbox();
+    });
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+    renderPortfolioControls();
+    renderPortfolioItems();
+    renderVideos();
+  </script>
 </body>
 </html>
