@@ -1,1 +1,867 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>
+    Tirth Modelling Studio | Gujarat's Biggest Theme Based Photography Studio
+  </title>
+
+  <!-- SEO -->
+
+  <meta
+    name="description"
+    content="Tirth Modelling Studio offers newborn photography, maternity shoots, kids photography, family portraits, cinematic reels, drone shoots and theme-based luxury photography in Ahmedabad."
+  >
+
+  <meta
+    name="keywords"
+    content="Ahmedabad photography studio, newborn photography, maternity photography, cinematic reels, drone videography, pre wedding photography, kids photography, family portraits"
+  >
+
+  <meta property="og:title" content="Tirth Modelling Studio">
+
+  <meta
+    property="og:description"
+    content="Luxury theme based photography and cinematic reels in Ahmedabad."
+  >
+
+  <meta property="og:image" content="assets/og-cover.jpg">
+
+  <meta property="og:type" content="website">
+
+  <link rel="icon" href="assets/favicon.png">
+
+  <!-- FONTS -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <!-- ICONS -->
+
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+  >
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    html{
+      scroll-behavior:smooth;
+    }
+
+    body{
+      background:#050505;
+      color:white;
+      font-family:'Inter',sans-serif;
+      overflow-x:hidden;
+    }
+
+    .container{
+      width:90%;
+      max-width:1400px;
+      margin:auto;
+    }
+
+    img,
+    video{
+      width:100%;
+      display:block;
+    }
+
+    section{
+      padding:100px 0;
+    }
+
+    /* NAVBAR */
+
+    .navbar{
+      position:fixed;
+      width:100%;
+      top:0;
+      left:0;
+      z-index:1000;
+      background:rgba(0,0,0,0.5);
+      backdrop-filter:blur(12px);
+      border-bottom:1px solid rgba(255,255,255,0.08);
+    }
+
+    .nav-wrapper{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:18px 0;
+    }
+
+    .logo h1{
+      font-family:'Cormorant Garamond',serif;
+      font-size:38px;
+      letter-spacing:4px;
+    }
+
+    .logo span{
+      color:#d4ab72;
+      font-size:11px;
+      letter-spacing:5px;
+    }
+
+    .nav-links{
+      display:flex;
+      gap:35px;
+      list-style:none;
+    }
+
+    .nav-links a{
+      color:white;
+      text-decoration:none;
+      transition:0.3s;
+    }
+
+    .nav-links a:hover{
+      color:#d4ab72;
+    }
+
+    /* HERO */
+
+    .hero{
+      height:100vh;
+      position:relative;
+      overflow:hidden;
+      display:flex;
+      align-items:center;
+    }
+
+    .hero-bg{
+      position:absolute;
+      inset:0;
+      width:100%;
+      height:100%;
+      object-fit:cover;
+    }
+
+    .hero-overlay{
+      position:absolute;
+      inset:0;
+      background:linear-gradient(to right,
+      rgba(0,0,0,0.85),
+      rgba(0,0,0,0.35));
+    }
+
+    .hero-content{
+      position:relative;
+      z-index:2;
+      max-width:750px;
+    }
+
+    .hero-subtitle{
+      color:#d4ab72;
+      letter-spacing:4px;
+      margin-bottom:20px;
+      font-size:14px;
+    }
+
+    .hero h2{
+      font-size:82px;
+      line-height:0.95;
+      margin-bottom:28px;
+      font-family:'Cormorant Garamond',serif;
+    }
+
+    .hero p{
+      color:#d7d7d7;
+      line-height:1.9;
+      margin-bottom:40px;
+      max-width:650px;
+    }
+
+    .hero-buttons{
+      display:flex;
+      gap:20px;
+      flex-wrap:wrap;
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding:15px 28px;
+      border-radius:50px;
+      text-decoration:none;
+      transition:0.3s;
+      font-weight:600;
+    }
+
+    .gold-btn{
+      background:#d4ab72;
+      color:black;
+    }
+
+    .outline-btn{
+      border:1px solid rgba(255,255,255,0.25);
+      color:white;
+    }
+
+    .btn:hover{
+      transform:translateY(-3px);
+    }
+
+    /* TITLE */
+
+    .section-title{
+      text-align:center;
+      margin-bottom:70px;
+    }
+
+    .section-title p{
+      color:#d4ab72;
+      letter-spacing:4px;
+      margin-bottom:15px;
+    }
+
+    .section-title h2{
+      font-size:60px;
+      font-family:'Cormorant Garamond',serif;
+    }
+
+    /* USP */
+
+    .usp-grid{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:25px;
+    }
+
+    .usp-box{
+      background:#101010;
+      padding:40px 25px;
+      border-radius:24px;
+      text-align:center;
+      border:1px solid rgba(255,255,255,0.08);
+    }
+
+    .usp-box h3{
+      color:#d4ab72;
+      font-size:42px;
+      margin-bottom:15px;
+    }
+
+    .usp-box p{
+      color:#cfcfcf;
+      line-height:1.8;
+    }
+
+    /* SERVICES */
+
+    .services-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:30px;
+    }
+
+    .service-card{
+      background:#101010;
+      border-radius:24px;
+      overflow:hidden;
+      border:1px solid rgba(255,255,255,0.08);
+      transition:0.4s;
+    }
+
+    .service-card:hover{
+      transform:translateY(-10px);
+    }
+
+    .service-card img{
+      height:420px;
+      object-fit:cover;
+    }
+
+    .service-content{
+      padding:28px;
+    }
+
+    .service-content h3{
+      font-size:32px;
+      margin-bottom:15px;
+      font-family:'Cormorant Garamond',serif;
+    }
+
+    .service-content p{
+      color:#cfcfcf;
+      line-height:1.8;
+    }
+
+    /* GALLERY */
+
+    .gallery-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:20px;
+    }
+
+    .gallery-item{
+      overflow:hidden;
+      border-radius:22px;
+    }
+
+    .gallery-item img{
+      height:450px;
+      object-fit:cover;
+      transition:0.5s;
+    }
+
+    .gallery-item:hover img{
+      transform:scale(1.05);
+    }
+
+    /* REELS */
+
+    .video-grid{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:30px;
+    }
+
+    .video-card{
+      background:#101010;
+      padding:15px;
+      border-radius:24px;
+      border:1px solid rgba(255,255,255,0.08);
+    }
+
+    .video-card video{
+      border-radius:18px;
+    }
+
+    /* CONTACT */
+
+    .contact-box{
+      background:#101010;
+      border-radius:28px;
+      padding:60px;
+      text-align:center;
+      border:1px solid rgba(255,255,255,0.08);
+    }
+
+    .contact-box h2{
+      font-size:58px;
+      margin-bottom:20px;
+      font-family:'Cormorant Garamond',serif;
+    }
+
+    .contact-box p{
+      color:#cfcfcf;
+      line-height:1.9;
+      max-width:900px;
+      margin:auto;
+      margin-bottom:35px;
+    }
+
+    footer{
+      padding:40px 0;
+      text-align:center;
+      color:#777;
+    }
+
+    /* STICKY WHATSAPP */
+
+    .sticky-whatsapp{
+      position:fixed;
+      right:25px;
+      bottom:25px;
+      width:65px;
+      height:65px;
+      background:#25D366;
+      border-radius:50%;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      color:white;
+      font-size:32px;
+      z-index:9999;
+      text-decoration:none;
+    }
+
+    /* MOBILE */
+
+    @media(max-width:991px){
+
+      .hero h2{
+        font-size:54px;
+      }
+
+      .nav-links{
+        display:none;
+      }
+
+      .services-grid,
+      .gallery-grid,
+      .video-grid,
+      .usp-grid{
+        grid-template-columns:1fr;
+      }
+
+      .hero-buttons{
+        flex-direction:column;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+
+  <header class="navbar">
+
+    <div class="container nav-wrapper">
+
+      <div class="logo">
+
+        <h1>TIRTH</h1>
+
+        <span>MODELLING STUDIO</span>
+
+      </div>
+
+      <ul class="nav-links">
+
+        <li><a href="#services">Services</a></li>
+
+        <li><a href="#gallery">Gallery</a></li>
+
+        <li><a href="#reels">Reels</a></li>
+
+        <li><a href="#contact">Contact</a></li>
+
+      </ul>
+
+    </div>
+
+  </header>
+
+  <!-- HERO -->
+
+  <section class="hero">
+
+    <img
+      src="assets/hero-image.jpg"
+      class="hero-bg"
+      alt="Tirth Modelling Studio"
+    >
+
+    <div class="hero-overlay"></div>
+
+    <div class="container hero-content">
+
+      <p class="hero-subtitle">
+
+        GUJARAT'S BIGGEST PHOTO-VIDEO STUDIO
+
+      </p>
+
+      <h2>
+
+        Luxury Theme Based <br>
+        Photography & Cinematic Reels
+
+      </h2>
+
+      <p>
+
+        Premium newborn photography, maternity shoots, cinematic reels, drone videography, kids photography and creative storytelling with 1500+ themes, costumes and accessories.
+
+      </p>
+
+      <div class="hero-buttons">
+
+        <a
+          href="https://wa.me/917624029370"
+          class="btn gold-btn"
+          target="_blank"
+        >
+          <i class="fab fa-whatsapp"></i>
+          Book Photoshoot
+        </a>
+
+        <a
+          href="https://www.instagram.com/tirthstudiophotography"
+          class="btn outline-btn"
+          target="_blank"
+        >
+          <i class="fab fa-instagram"></i>
+          Instagram
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- USP -->
+
+  <section>
+
+    <div class="container">
+
+      <div class="usp-grid">
+
+        <div class="usp-box">
+
+          <h3>1500+</h3>
+
+          <p>
+            Theme options with costumes and accessories.
+          </p>
+
+        </div>
+
+        <div class="usp-box">
+
+          <h3>100MP</h3>
+
+          <p>
+            Ultra high resolution premium photography.
+          </p>
+
+        </div>
+
+        <div class="usp-box">
+
+          <h3>Indoor + Outdoor</h3>
+
+          <p>
+            Indoor and outdoor photography at one place.
+          </p>
+
+        </div>
+
+        <div class="usp-box">
+
+          <h3>Drone Reels</h3>
+
+          <p>
+            Cinematic reels and aerial drone videography.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- SERVICES -->
+
+  <section id="services">
+
+    <div class="container">
+
+      <div class="section-title">
+
+        <p>OUR SERVICES</p>
+
+        <h2>
+          Premium Photography Services
+        </h2>
+
+      </div>
+
+      <div class="services-grid">
+
+        <div class="service-card">
+
+          <img src="assets/newborn-1.jpg">
+
+          <div class="service-content">
+
+            <h3>Newborn Photography</h3>
+
+            <p>
+              Creative newborn baby photography with luxury themes and props.
+            </p>
+
+          </div>
+
+        </div>
+
+        <div class="service-card">
+
+          <img src="assets/kids-1.jpg">
+
+          <div class="service-content">
+
+            <h3>Kids Photography</h3>
+
+            <p>
+              Fun and cinematic kids photoshoots with creative styling.
+            </p>
+
+          </div>
+
+        </div>
+
+        <div class="service-card">
+
+          <img src="assets/maternity-1.jpg">
+
+          <div class="service-content">
+
+            <h3>Maternity Photography</h3>
+
+            <p>
+              Elegant maternity photography with premium gowns and themes.
+            </p>
+
+          </div>
+
+        </div>
+
+        <div class="service-card">
+
+          <img src="assets/family-1.jpg">
+
+          <div class="service-content">
+
+            <h3>Family Portraits</h3>
+
+            <p>
+              Luxury family portraits with emotional storytelling.
+            </p>
+
+          </div>
+
+        </div>
+
+        <div class="service-card">
+
+          <img src="assets/prewedding-1.jpg">
+
+          <div class="service-content">
+
+            <h3>Pre-Wedding Shoots</h3>
+
+            <p>
+              Cinematic pre-wedding storytelling and luxury photography.
+            </p>
+
+          </div>
+
+        </div>
+
+        <div class="service-card">
+
+          <img src="assets/kids-2.jpg">
+
+          <div class="service-content">
+
+            <h3>Drone & Cinematic Reels</h3>
+
+            <p>
+              Professional cinematic reels and drone videography.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- GALLERY -->
+
+  <section id="gallery">
+
+    <div class="container">
+
+      <div class="section-title">
+
+        <p>PHOTO GALLERY</p>
+
+        <h2>
+          Explore Our Work
+        </h2>
+
+      </div>
+
+      <div class="gallery-grid">
+
+        <div class="gallery-item">
+          <img src="assets/newborn-1.jpg">
+        </div>
+
+        <div class="gallery-item">
+          <img src="assets/kids-1.jpg">
+        </div>
+
+        <div class="gallery-item">
+          <img src="assets/maternity-1.jpg">
+        </div>
+
+        <div class="gallery-item">
+          <img src="assets/family-1.jpg">
+        </div>
+
+        <div class="gallery-item">
+          <img src="assets/prewedding-1.jpg">
+        </div>
+
+        <div class="gallery-item">
+          <img src="assets/kids-2.jpg">
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- REELS -->
+
+  <section id="reels">
+
+    <div class="container">
+
+      <div class="section-title">
+
+        <p>CINEMATIC REELS</p>
+
+        <h2>
+          Cinematic Storytelling
+        </h2>
+
+      </div>
+
+      <div class="video-grid">
+
+        <div class="video-card">
+
+          <video controls poster="assets/maternity-thumb.jpg">
+
+            <source
+              src="assets/maternity-reel.mp4"
+              type="video/mp4"
+            >
+
+          </video>
+
+        </div>
+
+        <div class="video-card">
+
+          <video controls poster="assets/newborn-thumb.jpg">
+
+            <source
+              src="assets/newborn-reel.mp4"
+              type="video/mp4"
+            >
+
+          </video>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- CONTACT -->
+
+  <section id="contact">
+
+    <div class="container">
+
+      <div class="contact-box">
+
+        <h2>
+          Book Your Premium Photoshoot
+        </h2>
+
+        <p>
+
+          Tirth Modelling Studio offers premium theme based photography, cinematic reels, drone shoots and indoor-outdoor luxury photoshoots in Ahmedabad.
+
+        </p>
+
+        <a
+          href="https://wa.me/917624029370"
+          class="btn gold-btn"
+          target="_blank"
+        >
+          <i class="fab fa-whatsapp"></i>
+          WhatsApp Now
+        </a>
+
+        <br><br>
+
+        <a
+          href="https://www.instagram.com/tirthstudiophotography"
+          class="btn outline-btn"
+          target="_blank"
+        >
+          <i class="fab fa-instagram"></i>
+          Follow Instagram
+        </a>
+
+        <br><br><br>
+
+        <p>
+
+          178, Tirth modelling studio Besides Rayka hostel Phase 2,
+          Greenwood Vaishnavdevi circle,
+          near ashish farm,
+          near sterling Greenwood resort,
+          Lilapur, Gujarat 382481
+
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    © 2026 Tirth Modelling Studio. All Rights Reserved.
+
+  </footer>
+
+  <!-- STICKY WHATSAPP -->
+
+  <a
+    href="https://wa.me/917624029370"
+    class="sticky-whatsapp"
+    target="_blank"
+  >
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+</body>
+
+</html>
