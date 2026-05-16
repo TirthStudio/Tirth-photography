@@ -674,108 +674,84 @@
 
     function loadImages() {
 
-      const end =
-        Math.min(
-          currentImage + imagesPerLoad - 1,
-          totalImages
-        );
+  const ranges = [
 
-      for (
-        let i = currentImage;
-        i <= end;
-        i++
-      ) {
+    [1, 80],       // boys outdoor
+    [308, 388],    // girls outdoor
+    [586, 666],    // boys indoor
+    [818, 898]     // girls indoor
 
-        // LOCATION
+  ];
 
-        const location =
-          i <= 585
-          ? "outdoor"
-          : "indoor";
+  ranges.forEach(range => {
 
-        // GENDER
+    for (
+      let i = range[0];
+      i <= range[1];
+      i++
+    ) {
 
-        let gender = "";
+      const location =
+        i <= 585
+        ? "outdoor"
+        : "indoor";
 
-        // BOYS
-
-        if (
-
-          (i >= 1 && i <= 307) ||
-
-          (i >= 586 && i <= 817)
-
-        ) {
-
-          gender = "boys";
-
-        }
-
-        // GIRLS
-
-        else if (
-
-          (i >= 308 && i <= 585) ||
-
-          (i >= 818 && i <= 999)
-
-        ) {
-
-          gender = "girls";
-
-        }
-
-        // ALT TEXT
-
-        const altText =
-
-          gender === "boys"
-
-          ? boysAltTexts[
-              i % boysAltTexts.length
-            ]
-
-          : girlsAltTexts[
-              i % girlsAltTexts.length
-            ];
-
-        // GENERATE IMAGE
-
-        gallery.innerHTML += `
-
-          <div
-            class="gallery-item ${gender} ${location}"
-          >
-
-            <img
-              src="assets/kids/kids-${i}.jpg"
-              alt="${altText}"
-              loading="lazy"
-            >
-
-          </div>
-
-        `;
-
-      }
-
-      currentImage += imagesPerLoad;
-
-      applyFilters();
-
-      // HIDE BUTTON
+      let gender = "";
 
       if (
-        currentImage > totalImages
+        (i >= 1 && i <= 307) ||
+        (i >= 586 && i <= 817)
       ) {
 
-        document
-          .getElementById("load-more-btn")
-          .style.display = "none";
+        gender = "boys";
 
       }
 
+      else {
+
+        gender = "girls";
+
+      }
+
+      const altText =
+
+        gender === "boys"
+
+        ? boysAltTexts[
+            i % boysAltTexts.length
+          ]
+
+        : girlsAltTexts[
+            i % girlsAltTexts.length
+          ];
+
+      gallery.innerHTML += `
+
+        <div
+          class="gallery-item ${gender} ${location}"
+        >
+
+          <img
+            src="assets/kids/kids-${i}.jpg"
+            alt="${altText}"
+            loading="lazy"
+          >
+
+        </div>
+
+      `;
+
     }
+
+  });
+
+  applyFilters();
+
+  document
+    .getElementById("load-more-btn")
+    .style.display = "none";
+
+}
 
     // GENDER FILTER
 
