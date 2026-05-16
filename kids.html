@@ -800,6 +800,28 @@
 
 }
 
+function filterGender(type, btn) {
+  selectedGender = type;
+
+  document.querySelectorAll(".gender-btn")
+    .forEach(b => b.classList.remove("active"));
+
+  btn.classList.add("active");
+
+  applyFilters();
+}
+
+function filterLocation(type, btn) {
+  selectedLocation = type;
+
+  document.querySelectorAll(".location-btn")
+    .forEach(b => b.classList.remove("active"));
+
+  btn.classList.add("active");
+
+  applyFilters();
+}
+
     // INITIAL LOAD
 
     loadImages();
