@@ -259,6 +259,29 @@
       color:black;
     }
 
+    /* LOAD MORE */
+
+    .load-more-wrapper{
+      text-align:center;
+      margin-top:50px;
+    }
+
+    #load-more-btn{
+      padding:14px 34px;
+      border:none;
+      border-radius:50px;
+      background:#d4ab72;
+      color:black;
+      font-size:15px;
+      cursor:pointer;
+      transition:0.3s;
+      font-weight:600;
+    }
+
+    #load-more-btn:hover{
+      transform:translateY(-3px);
+    }
+
     /* CTA */
 
     .cta-section{
@@ -438,47 +461,78 @@
 
       <!-- GENDER FILTERS -->
 
-<div class="gallery-filters">
+      <div class="gallery-filters">
 
-  <button onclick="filterGender('all')">
-    All Kids
-  </button>
+        <button onclick="filterGender('all')">
+          All Kids
+        </button>
 
-  <button onclick="filterGender('boys')">
-    Boys
-  </button>
+        <button onclick="filterGender('boys')">
+          Boys
+        </button>
 
-  <button onclick="filterGender('girls')">
-    Girls
-  </button>
+        <button onclick="filterGender('girls')">
+          Girls
+        </button>
 
-</div>
+      </div>
 
-<!-- LOCATION FILTERS -->
+      <!-- LOCATION FILTERS -->
 
-<div class="gallery-filters secondary">
+      <div class="gallery-filters secondary">
 
-  <button onclick="filterLocation('all')">
-    All Photos
-  </button>
+        <button onclick="filterLocation('all')">
+          All Photos
+        </button>
 
-  <button onclick="filterLocation('outdoor')">
-    Outdoor
-  </button>
+        <button onclick="filterLocation('outdoor')">
+          Outdoor
+        </button>
 
-  <button onclick="filterLocation('indoor')">
-    Indoor
-  </button>
+        <button onclick="filterLocation('indoor')">
+          Indoor
+        </button>
 
-</div>
+      </div>
+
       <!-- GALLERY -->
 
       <div class="gallery-grid" id="kids-gallery"></div>
+
+      <!-- LOAD MORE -->
+
+      <div class="load-more-wrapper">
+
+        <button
+          id="load-more-btn"
+          onclick="loadImages()"
+        >
+          Load More
+        </button>
+
+      </div>
 
       <script>
 
         const gallery =
           document.getElementById("kids-gallery");
+
+        // TOTAL IMAGES
+
+        const totalImages = 1092;
+
+        // LOAD COUNT
+
+        const imagesPerLoad = 60;
+
+        // CURRENT IMAGE
+
+        let currentImage = 1;
+
+        // FILTERS
+
+        let selectedGender = "all";
+        let selectedLocation = "all";
 
         // ALT TEXTS
 
@@ -496,117 +550,151 @@
           "Toddler Girl Photography Ahmedabad"
         ];
 
-        // GENERATE IMAGES
+        // LOAD IMAGES
 
-        for (let i = 1; i <= 1092; i++) {
+        function loadImages() {
 
-       // OUTDOOR / INDOOR
+          const end =
+            Math.min(
+              currentImage + imagesPerLoad - 1,
+              totalImages
+            );
 
-const location =
-  i <= 585
-  ? "outdoor"
-  : "indoor";
+          for (
+            let i = currentImage;
+            i <= end;
+            i++
+          ) {
 
-// BOYS / GIRLS
+            // OUTDOOR / INDOOR
 
-let gender = "";
+            const location =
+              i <= 585
+              ? "outdoor"
+              : "indoor";
 
-// Outdoor Boys
-if (i >= 1 && i <= 307) {
-  gender = "boys";
-}
+            // BOYS / GIRLS
 
-// Outdoor Girls
-else if (i >= 308 && i <= 585) {
-  gender = "girls";
-}
+            let gender = "";
 
-// Indoor Boys
-else if (i >= 586 && i <= 817) {
-  gender = "boys";
-}
+            // Outdoor Boys
+            if (i >= 1 && i <= 307) {
+              gender = "boys";
+            }
 
-// Indoor Girls
-else if (i >= 818 && i <= 1092) {
-  gender = "girls";
-}
+            // Outdoor Girls
+            else if (i >= 308 && i <= 585) {
+              gender = "girls";
+            }
 
-          const altText =
-            gender === "boys"
-            ? boysAltTexts[i % boysAltTexts.length]
-            : girlsAltTexts[i % girlsAltTexts.length];
+            // Indoor Boys
+            else if (i >= 586 && i <= 817) {
+              gender = "boys";
+            }
 
-          gallery.innerHTML += `
+            // Indoor Girls
+            else if (i >= 818 && i <= 1092) {
+              gender = "girls";
+            }
 
-            <div class="gallery-item ${gender} ${location}">
+            // ALT TEXT
 
-              <img
-                src="assets/kids/kids-${i}.jpg"
-                alt="${altText}"
-                loading="lazy"
-              >
+            const altText =
+              gender === "boys"
+              ? boysAltTexts[i % boysAltTexts.length]
+              : girlsAltTexts[i % girlsAltTexts.length];
 
-            </div>
+            // GENERATE HTML
 
-          `;
+            gallery.innerHTML += `
+
+              <div class="gallery-item ${gender} ${location}">
+
+                <img
+                  src="assets/kids/kids-${i}.jpg"
+                  alt="${altText}"
+                  loading="lazy"
+                >
+
+              </div>
+
+            `;
+
+          }
+
+          currentImage += imagesPerLoad;
+
+          applyFilters();
+
+          // HIDE BUTTON
+
+          if (currentImage > totalImages) {
+
+            document
+              .getElementById("load-more-btn")
+              .style.display = "none";
+
+          }
 
         }
 
-        // ACTIVE FILTERS
+        // GENDER FILTER
 
-let selectedGender = "all";
-let selectedLocation = "all";
+        function filterGender(gender) {
 
-// GENDER FILTER
+          selectedGender = gender;
 
-function filterGender(gender) {
+          applyFilters();
 
-  selectedGender = gender;
+        }
 
-  applyFilters();
+        // LOCATION FILTER
 
-}
+        function filterLocation(location) {
 
-// LOCATION FILTER
+          selectedLocation = location;
 
-function filterLocation(location) {
+          applyFilters();
 
-  selectedLocation = location;
+        }
 
-  applyFilters();
+        // APPLY FILTERS
 
-}
+        function applyFilters() {
 
-// APPLY FILTERS
+          const items =
+            document.querySelectorAll(".gallery-item");
 
-function applyFilters() {
+          items.forEach(item => {
 
-  const items =
-    document.querySelectorAll(".gallery-item");
+            const genderMatch =
+              selectedGender === "all" ||
+              item.classList.contains(selectedGender);
 
-  items.forEach(item => {
+            const locationMatch =
+              selectedLocation === "all" ||
+              item.classList.contains(selectedLocation);
 
-    const genderMatch =
-      selectedGender === "all" ||
-      item.classList.contains(selectedGender);
+            if (
+              genderMatch &&
+              locationMatch
+            ) {
 
-    const locationMatch =
-      selectedLocation === "all" ||
-      item.classList.contains(selectedLocation);
+              item.style.display = "block";
 
-    if (genderMatch && locationMatch) {
+            } else {
 
-      item.style.display = "block";
+              item.style.display = "none";
 
-    } else {
+            }
 
-      item.style.display = "none";
+          });
 
-    }
+        }
 
-  });
+        // INITIAL LOAD
 
-}
+        loadImages();
 
       </script>
 
