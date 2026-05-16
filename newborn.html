@@ -410,19 +410,63 @@
 
      <div class="gallery-grid" id="newborn-gallery"></div>
 
-<script>
-  const gallery = document.getElementById("newborn-gallery");
+<!-- OUTDOOR NEWBORN PHOTOGRAPHY -->
+<h2 class="gallery-title">Outdoor Newborn Photography</h2>
+<div class="gallery-grid" id="outdoor-gallery"></div>
 
-  for (let i = 1; i <= 424; i++) {
-    gallery.innerHTML += `
+<!-- INDOOR NEWBORN PHOTOGRAPHY -->
+<h2 class="gallery-title">Indoor Newborn Photography</h2>
+<div class="gallery-grid" id="indoor-gallery"></div>
+
+<script>
+  // Outdoor Images (1–58)
+  const outdoorGallery = document.getElementById("outdoor-gallery");
+
+  const outdoorAltTexts = [
+    "Outdoor Newborn Photography in Ahmedabad",
+    "Luxury Outdoor Baby Photoshoot Ahmedabad",
+    "Natural Light Newborn Photography Ahmedabad",
+    "Outdoor Infant Baby Portrait Ahmedabad",
+    "Creative Outdoor Newborn Session Ahmedabad"
+  ];
+
+  for (let i = 1; i <= 58; i++) {
+
+    const randomAlt =
+      outdoorAltTexts[i % outdoorAltTexts.length];
+
+    outdoorGallery.innerHTML += `
       <div class="gallery-item">
         <img
           src="assets/newborn/newborn-${i}.jpg"
-          alt="Luxury Newborn Baby Photography in Ahmedabad"
-          alt="Newborn Baby Photoshoot in Ahmedabad"
-          alt="Newborn Baby Theme Photography in Ahmedabad"
-          alt="Infant Baby Props Photography in Ahmedabad"
-          alt="Newborn Kids Photo Service in Ahmedabad"
+          alt="${randomAlt}"
+          loading="lazy"
+        >
+      </div>
+    `;
+  }
+
+  // Indoor Images (59–424)
+  const indoorGallery = document.getElementById("indoor-gallery");
+
+  const indoorAltTexts = [
+    "Indoor Newborn Photography Ahmedabad",
+    "Luxury Indoor Baby Photoshoot Ahmedabad",
+    "Studio Newborn Photography Ahmedabad",
+    "Indoor Infant Baby Portrait Ahmedabad",
+    "Creative Newborn Theme Photography Ahmedabad"
+  ];
+
+  for (let i = 59; i <= 424; i++) {
+
+    const randomAlt =
+      indoorAltTexts[i % indoorAltTexts.length];
+
+    indoorGallery.innerHTML += `
+      <div class="gallery-item">
+        <img
+          src="assets/newborn/newborn-${i}.jpg"
+          alt="${randomAlt}"
           loading="lazy"
         >
       </div>
