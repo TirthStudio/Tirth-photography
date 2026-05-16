@@ -677,53 +677,37 @@
           ? "outdoor"
           : "indoor";
 
-        // GENDER
+       // GENDER
 
-        let gender = "";
+let gender = "";
 
-        // OUTDOOR BOYS
+// BOYS
 
-        if (
-          i >= 1 &&
-          i <= 307
-        ) {
+if (
 
-          gender = "boys";
+  (i >= 1 && i <= 307) ||
 
-        }
+  (i >= 586 && i <= 817)
 
-        // OUTDOOR GIRLS
+) {
 
-        else if (
-          i >= 308 &&
-          i <= 585
-        ) {
+  gender = "boys";
 
-          gender = "girls";
+}
 
-        }
+// GIRLS
 
-        // INDOOR BOYS
+else if (
 
-        else if (
-          i >= 586 &&
-          i <= 817
-        ) {
+  (i >= 308 && i <= 585) ||
 
-          gender = "boys";
+  (i >= 818 && i <= 1092)
 
-        }
+) {
 
-        // INDOOR GIRLS
+  gender = "girls";
 
-        else if (
-          i >= 818 &&
-          i <= 1092
-        ) {
-
-          gender = "girls";
-
-        }
+}
 
         // ALT TEXT
 
