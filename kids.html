@@ -2,810 +2,177 @@
 <html lang="en">
 
 <head>
-
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  >
+  <title>Kids Photography Ahmedabad | Tirth Modelling Studio</title>
 
-  <title>
-    Kids Photography Ahmedabad | Tirth Modelling Studio
-  </title>
+  <meta name="description" content="Luxury kids photography in Ahmedabad...">
 
-  <meta
-    name="description"
-    content="Luxury kids photography in Ahmedabad with birthday themes, 1 year baby photoshoots, toddler portraits, cake smash sessions and cinematic kids photography by Tirth Modelling Studio."
-  >
-
-  <meta
-    name="keywords"
-    content="kids photography Ahmedabad, birthday photography Ahmedabad, 1 year baby photoshoot Ahmedabad, toddler photography Ahmedabad, baby boy photography Ahmedabad, baby girl photography Ahmedabad, cake smash photography Ahmedabad"
-  >
-
-  <meta
-    property="og:title"
-    content="Kids Photography | Tirth Modelling Studio"
-  >
-
-  <meta
-    property="og:description"
-    content="Premium kids photography with cinematic styling and luxury birthday themes."
-  >
-
-  <meta
-    property="og:image"
-    content="assets/kids/kids-cover.jpg"
-  >
-
-  <meta
-    property="og:type"
-    content="website"
-  >
-
-  <link
-    rel="icon"
-    type="image/png"
-    href="assets/favicon.png"
-  >
-
-  <link
-    rel="preconnect"
-    href="https://fonts.googleapis.com"
-  >
-
-  <link
-    rel="preconnect"
-    href="https://fonts.gstatic.com"
-    crossorigin
-  >
-
-  <link
-    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap"
-    rel="stylesheet"
-  >
-
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-  >
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
   <style>
+    *{margin:0;padding:0;box-sizing:border-box;}
+    body{background:#050505;color:white;font-family:'Inter',sans-serif;}
 
-    *{
-      margin:0;
-      padding:0;
-      box-sizing:border-box;
-    }
-
-    body{
-      background:#050505;
-      color:white;
-      font-family:'Inter',sans-serif;
-      overflow-x:hidden;
-    }
-
-    html{
-      scroll-behavior:smooth;
-    }
-
-    .container{
-      width:90%;
-      max-width:1400px;
-      margin:auto;
-    }
-
-    img{
-      width:100%;
-      display:block;
-    }
-
-    a{
-      text-decoration:none;
-    }
-
-    /* NAVBAR */
+    .container{width:90%;max-width:1400px;margin:auto;}
 
     .navbar{
-      position:fixed;
-      width:100%;
-      top:0;
-      left:0;
+      position:fixed;width:100%;top:0;left:0;
+      background:rgba(0,0,0,0.55);backdrop-filter:blur(14px);
       z-index:1000;
-      background:rgba(0,0,0,0.55);
-      backdrop-filter:blur(14px);
-      border-bottom:1px solid rgba(255,255,255,0.08);
     }
 
-    .nav-wrapper{
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      padding:18px 0;
-    }
+    .nav-wrapper{display:flex;justify-content:space-between;padding:18px 0;}
 
-    .logo h1{
-      font-size:38px;
-      letter-spacing:4px;
-      font-family:'Cormorant Garamond',serif;
-    }
+    .hero{height:75vh;position:relative;display:flex;align-items:center;}
+    .hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
+    .hero-overlay{position:absolute;inset:0;background:linear-gradient(to right,rgba(0,0,0,0.85),rgba(0,0,0,0.3));}
+    .hero-content{position:relative;z-index:2;}
 
-    .logo span{
-      color:#d4ab72;
-      font-size:11px;
-      letter-spacing:5px;
-    }
+    .gallery-section{padding:100px 0;}
 
-    .back-btn{
-      color:white;
-      border:1px solid rgba(255,255,255,0.2);
-      padding:12px 22px;
-      border-radius:50px;
-      transition:0.3s;
-    }
+    .gallery-filters{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-bottom:20px;}
+    .gallery-filters button{padding:10px 20px;border-radius:50px;background:#111;color:white;cursor:pointer;}
+    .gallery-filters button.active{background:#d4ab72;color:black;}
 
-    .back-btn:hover{
-      background:#d4ab72;
-      color:black;
-      border-color:#d4ab72;
-    }
+    .gallery-grid{columns:3 300px;column-gap:20px;}
 
-    /* HERO */
+    .gallery-item{margin-bottom:20px;border-radius:20px;overflow:hidden;}
 
-    .hero{
-      height:75vh;
-      position:relative;
-      overflow:hidden;
-      display:flex;
-      align-items:center;
-    }
-
-    .hero img{
-      position:absolute;
-      inset:0;
-      width:100%;
-      height:100%;
-      object-fit:cover;
-    }
-
-    .hero-overlay{
-      position:absolute;
-      inset:0;
-      background:linear-gradient(
-        to right,
-        rgba(0,0,0,0.85),
-        rgba(0,0,0,0.3)
-      );
-    }
-
-    .hero-content{
-      position:relative;
-      z-index:2;
-      max-width:700px;
-    }
-
-    .hero-content p{
-      color:#d4ab72;
-      letter-spacing:4px;
-      margin-bottom:18px;
-    }
-
-    .hero-content h2{
-      font-size:82px;
-      line-height:0.95;
-      margin-bottom:25px;
-      font-family:'Cormorant Garamond',serif;
-    }
-
-    .hero-content span{
-      color:#d7d7d7;
-      line-height:1.9;
-      display:block;
-      font-size:17px;
-    }
-
-    /* GALLERY */
-
-    .gallery-section{
-      padding:100px 0;
-    }
-
-    .section-title{
-      text-align:center;
-      margin-bottom:70px;
-    }
-
-    .section-title p{
-      color:#d4ab72;
-      letter-spacing:4px;
-      margin-bottom:15px;
-    }
-
-    .section-title h2{
-      font-size:60px;
-      font-family:'Cormorant Garamond',serif;
-    }
-
-    /* FILTERS */
-
-    .gallery-filters{
-      display:flex;
-      justify-content:center;
-      gap:12px;
-      margin-bottom:18px;
-      flex-wrap:wrap;
-    }
-
-    .gallery-filters.secondary{
-      margin-bottom:40px;
-    }
-
-    .gallery-filters button{
-      padding:12px 24px;
-      border:none;
-      border-radius:50px;
-      background:#111;
-      color:white;
-      cursor:pointer;
-      transition:0.3s;
-      font-size:14px;
-      border:1px solid rgba(255,255,255,0.08);
-    }
-
-    .gallery-filters button:hover{
-      background:#d4ab72;
-      color:black;
-    }
-
-    .gallery-filters button.active{
-      background:#d4ab72;
-      color:black;
-    }
-
-    /* GALLERY GRID */
-
-    .gallery-grid{
-      columns:3 320px;
-      column-gap:22px;
-    }
-
-    .gallery-item{
-      margin-bottom:22px;
-      overflow:hidden;
-      border-radius:24px;
-      border:1px solid rgba(255,255,255,0.08);
-      background:#101010;
-      break-inside:avoid;
-    }
-
-    .gallery-item img{
-      transition:0.5s;
-    }
-
-    .gallery-item:hover img{
-      transform:scale(1.04);
-    }
-
-    /* LOAD MORE */
-
-    .load-more-wrapper{
-      text-align:center;
-      margin-top:50px;
-    }
+    img{width:100%;display:block;}
 
     #load-more-btn{
-      padding:14px 34px;
-      border:none;
-      border-radius:50px;
-      background:#d4ab72;
-      color:black;
-      font-size:15px;
-      cursor:pointer;
-      transition:0.3s;
-      font-weight:600;
+      padding:12px 28px;border-radius:50px;
+      background:#d4ab72;border:none;cursor:pointer;
     }
-
-    #load-more-btn:hover{
-      transform:translateY(-3px);
-    }
-
-    /* CTA */
-
-    .cta-section{
-      padding-bottom:100px;
-    }
-
-    .cta-box{
-      background:#101010;
-      border-radius:30px;
-      padding:60px;
-      text-align:center;
-      border:1px solid rgba(255,255,255,0.08);
-    }
-
-    .cta-box h2{
-      font-size:58px;
-      margin-bottom:20px;
-      font-family:'Cormorant Garamond',serif;
-    }
-
-    .cta-box p{
-      color:#cfcfcf;
-      line-height:1.9;
-      max-width:850px;
-      margin:auto;
-      margin-bottom:35px;
-    }
-
-    .cta-buttons{
-      display:flex;
-      justify-content:center;
-      gap:20px;
-      flex-wrap:wrap;
-    }
-
-    .btn{
-      display:inline-flex;
-      align-items:center;
-      gap:10px;
-      padding:15px 28px;
-      border-radius:50px;
-      transition:0.3s;
-      font-weight:600;
-    }
-
-    .gold-btn{
-      background:#d4ab72;
-      color:black;
-    }
-
-    .outline-btn{
-      border:1px solid rgba(255,255,255,0.2);
-      color:white;
-    }
-
-    .btn:hover{
-      transform:translateY(-3px);
-    }
-
-    footer{
-      padding:40px 0;
-      text-align:center;
-      color:#777;
-    }
-
-    .sticky-whatsapp{
-      position:fixed;
-      right:25px;
-      bottom:25px;
-      width:65px;
-      height:65px;
-      background:#25D366;
-      border-radius:50%;
-      display:flex;
-      justify-content:center;
-      align-items:center;
-      color:white;
-      font-size:32px;
-      z-index:9999;
-    }
-
-    @media(max-width:991px){
-
-      .hero-content h2{
-        font-size:54px;
-      }
-
-      .section-title h2{
-        font-size:42px;
-      }
-
-      .cta-box{
-        padding:40px 25px;
-      }
-
-      .cta-box h2{
-        font-size:42px;
-      }
-
-      .cta-buttons{
-        flex-direction:column;
-      }
-
-    }
-
   </style>
-
 </head>
 
 <body>
 
-  <!-- NAVBAR -->
+<header class="navbar">
+  <div class="container nav-wrapper">
+    <h1>TIRTH</h1>
+    <a href="index.html">Back</a>
+  </div>
+</header>
 
-  <header class="navbar">
+<section class="hero">
+  <img src="assets/kids/kids-cover.jpg">
+  <div class="hero-overlay"></div>
+</section>
 
-    <div class="container nav-wrapper">
+<section class="gallery-section">
 
-      <div class="logo">
+  <div class="container">
 
-        <h1>TIRTH</h1>
-
-        <span>MODELLING STUDIO</span>
-
-      </div>
-
-      <a
-        href="index.html"
-        class="back-btn"
-      >
-        ← Back To Home
-      </a>
-
+    <div class="gallery-filters">
+      <button class="gender-btn active" onclick="filterGender('all', this)">All</button>
+      <button class="gender-btn" onclick="filterGender('boys', this)">Boys</button>
+      <button class="gender-btn" onclick="filterGender('girls', this)">Girls</button>
     </div>
 
-  </header>
-
-  <!-- HERO -->
-
-  <section class="hero">
-
-    <img
-      src="assets/kids/kids-cover.jpg"
-      alt="Kids Photography Ahmedabad"
-    >
-
-    <div class="hero-overlay"></div>
-
-    <div class="container hero-content">
-
-      <p>KIDS PHOTOGRAPHY</p>
-
-      <h2>
-        Luxury Kids <br>
-        Photography
-      </h2>
-
-      <span>
-        Creative kids photography with birthday themes, toddler portraits, cinematic styling and luxury studio concepts in Ahmedabad.
-      </span>
-
+    <div class="gallery-filters">
+      <button class="location-btn active" onclick="filterLocation('all', this)">All</button>
+      <button class="location-btn" onclick="filterLocation('outdoor', this)">Outdoor</button>
+      <button class="location-btn" onclick="filterLocation('indoor', this)">Indoor</button>
     </div>
 
-  </section>
+    <div class="gallery-grid" id="kids-gallery"></div>
 
-  <!-- GALLERY -->
-
-  <section class="gallery-section">
-
-    <div class="container">
-
-      <div class="section-title">
-
-        <p>PHOTO GALLERY</p>
-
-        <h2>
-          Kids Portfolio
-        </h2>
-
-      </div>
-
-      <!-- GENDER FILTERS -->
-
-      <div class="gallery-filters">
-
-        <button
-          class="gender-btn active"
-          onclick="filterGender('all', this)"
-        >
-          All Kids
-        </button>
-
-        <button
-          class="gender-btn"
-          onclick="filterGender('boys', this)"
-        >
-          Boys
-        </button>
-
-        <button
-          class="gender-btn"
-          onclick="filterGender('girls', this)"
-        >
-          Girls
-        </button>
-
-      </div>
-
-      <!-- LOCATION FILTERS -->
-
-      <div class="gallery-filters secondary">
-
-        <button
-          class="location-btn active"
-          onclick="filterLocation('all', this)"
-        >
-          All Photos
-        </button>
-
-        <button
-          class="location-btn"
-          onclick="filterLocation('outdoor', this)"
-        >
-          Outdoor
-        </button>
-
-        <button
-          class="location-btn"
-          onclick="filterLocation('indoor', this)"
-        >
-          Indoor
-        </button>
-
-      </div>
-
-      <!-- GALLERY -->
-
-      <div
-        class="gallery-grid"
-        id="kids-gallery"
-      ></div>
-
-      <!-- LOAD MORE -->
-
-      <div class="load-more-wrapper">
-
-        <button
-          id="load-more-btn"
-          onclick="loadImages()"
-        >
-          Load More
-        </button>
-
-      </div>
-
+    <div style="text-align:center;margin-top:40px;">
+      <button id="load-more-btn" onclick="loadImages()">Load More</button>
     </div>
 
-  </section>
+  </div>
 
-  <!-- CTA -->
+</section>
 
-  <section class="cta-section">
+<script>
 
-    <div class="container">
+const gallery = document.getElementById("kids-gallery");
 
-      <div class="cta-box">
+const totalImages = 999;
+const imagesPerLoad = 60;
 
-        <h2>
-          Book Your Kids Photoshoot
-        </h2>
+let currentImage = 1;
 
-        <p>
-          Tirth Modelling Studio offers luxury kids photography, birthday themes, cinematic toddler portraits and premium baby photoshoots in Ahmedabad.
-        </p>
+let selectedGender = "all";
+let selectedLocation = "all";
 
-        <div class="cta-buttons">
+const boysAltTexts = [
+  "Baby Boy Photography Ahmedabad",
+  "Kids Birthday Photoshoot Ahmedabad",
+  "1 Year Baby Boy Photoshoot Ahmedabad",
+  "Toddler Boy Photography Ahmedabad"
+];
 
-          <a
-            href="https://wa.me/917624029370"
-            class="btn gold-btn"
-            target="_blank"
-          >
-            <i class="fab fa-whatsapp"></i>
-            WhatsApp Now
-          </a>
+const girlsAltTexts = [
+  "Baby Girl Photography Ahmedabad",
+  "Kids Theme Photoshoot Ahmedabad",
+  "1 Year Baby Girl Photoshoot Ahmedabad",
+  "Toddler Girl Photography Ahmedabad"
+];
 
-          <a
-            href="https://www.instagram.com/tirthstudiophotography"
-            class="btn outline-btn"
-            target="_blank"
-          >
-            <i class="fab fa-instagram"></i>
-            Follow Instagram
-          </a>
-
-        </div>
-
-      </div>
-
-    </div>
-
-  </section>
-
-  <footer>
-    © 2026 Tirth Modelling Studio.
-    All Rights Reserved.
-  </footer>
-
-  <!-- STICKY WHATSAPP -->
-
-  <a
-    href="https://wa.me/917624029370"
-    class="sticky-whatsapp"
-    target="_blank"
-  >
-    <i class="fab fa-whatsapp"></i>
-  </a>
-
-  <!-- SCRIPT -->
-
-  <script>
-
-    const gallery =
-      document.getElementById("kids-gallery");
-
-    const totalImages = 999;
-
-    const imagesPerLoad = 60;
-
-    let currentImage = 1;
-
-    let selectedGender = "all";
-
-    let selectedLocation = "all";
-
-    // ALT TEXTS
-
-    const boysAltTexts = [
-
-      "Baby Boy Photography Ahmedabad",
-
-      "Kids Birthday Photoshoot Ahmedabad",
-
-      "1 Year Baby Boy Photoshoot Ahmedabad",
-
-      "Toddler Boy Photography Ahmedabad"
-
-    ];
-
-    const girlsAltTexts = [
-
-      "Baby Girl Photography Ahmedabad",
-
-      "Kids Theme Photoshoot Ahmedabad",
-
-      "1 Year Baby Girl Photoshoot Ahmedabad",
-
-      "Toddler Girl Photography Ahmedabad"
-
-    ];
-
-    // LOAD IMAGES
-
-    function loadImages() {
+/* ✅ FIXED LOAD LOGIC */
+function loadImages() {
 
   let loaded = 0;
 
-  while (
-    currentImage <= totalImages &&
-    loaded < imagesPerLoad
-  ) {
+  while (currentImage <= totalImages && loaded < imagesPerLoad) {
 
-    let i;
+    let i = currentImage; // 🔥 FIX: no skipping logic anymore
 
-    // ROTATING MIXED LOADING
+    const location = (i <= 585) ? "outdoor" : "indoor";
 
-    if (loaded % 4 === 0) {
-
-      i = 1 + Math.floor(loaded / 4);
-
-    }
-
-    else if (loaded % 4 === 1) {
-
-      i = 308 + Math.floor(loaded / 4);
-
-    }
-
-    else if (loaded % 4 === 2) {
-
-      i = 586 + Math.floor(loaded / 4);
-
-    }
-
-    else {
-
-      i = 818 + Math.floor(loaded / 4);
-
-    }
-
-    // STOP IF RANGE EXCEEDED
-
-    if (
-      i > totalImages
-    ) {
-
-      loaded++;
-      continue;
-
-    }
-
-    // LOCATION
-
-    const location =
-      i <= 585
-      ? "outdoor"
-      : "indoor";
-
-    // GENDER
-
-    let gender = "";
-
-    if (
-      (i >= 1 && i <= 307) ||
-      (i >= 586 && i <= 817)
-    ) {
-
-      gender = "boys";
-
-    }
-
-    else {
-
-      gender = "girls";
-
-    }
-
-    // ALT TEXT
+    let gender =
+      ((i >= 1 && i <= 307) || (i >= 586 && i <= 817))
+      ? "boys"
+      : "girls";
 
     const altText =
-
       gender === "boys"
-
-      ? boysAltTexts[
-          i % boysAltTexts.length
-        ]
-
-      : girlsAltTexts[
-          i % girlsAltTexts.length
-        ];
-
-    // ADD IMAGE
+        ? boysAltTexts[i % boysAltTexts.length]
+        : girlsAltTexts[i % girlsAltTexts.length];
 
     gallery.innerHTML += `
-
-      <div
-        class="gallery-item ${gender} ${location}"
-      >
-
-        <img
-          src="assets/kids/kids-${i}.jpg"
-          alt="${altText}"
-          loading="lazy"
-        >
-
+      <div class="gallery-item ${gender} ${location}">
+        <img src="assets/kids/kids-${i}.jpg" alt="${altText}" loading="lazy">
       </div>
-
     `;
 
-    loaded++;
-
     currentImage++;
-
+    loaded++;
   }
 
   applyFilters();
 
-  // HIDE BUTTON
-
-  if (
-    currentImage > totalImages
-  ) {
-
-    document
-      .getElementById("load-more-btn")
-      .style.display = "none";
-
+  if (currentImage > totalImages) {
+    document.getElementById("load-more-btn").style.display = "none";
   }
+}
 
+/* ✅ MUST EXIST BEFORE FIRST CALL */
+function applyFilters() {
+
+  document.querySelectorAll(".gallery-item").forEach(item => {
+
+    const matchGender =
+      selectedGender === "all" || item.classList.contains(selectedGender);
+
+    const matchLocation =
+      selectedLocation === "all" || item.classList.contains(selectedLocation);
+
+    item.style.display = (matchGender && matchLocation) ? "block" : "none";
+
+  });
 }
 
 function filterGender(type, btn) {
   selectedGender = type;
 
-  document.querySelectorAll(".gender-btn")
-    .forEach(b => b.classList.remove("active"));
-
+  document.querySelectorAll(".gender-btn").forEach(b => b.classList.remove("active"));
   btn.classList.add("active");
 
   applyFilters();
@@ -814,40 +181,16 @@ function filterGender(type, btn) {
 function filterLocation(type, btn) {
   selectedLocation = type;
 
-  document.querySelectorAll(".location-btn")
-    .forEach(b => b.classList.remove("active"));
-
+  document.querySelectorAll(".location-btn").forEach(b => b.classList.remove("active"));
   btn.classList.add("active");
 
   applyFilters();
 }
 
-    // INITIAL LOAD
+/* INIT */
+loadImages();
 
-    loadImages();
-
-    function applyFilters() {
-  const items = document.querySelectorAll(".gallery-item");
-
-  items.forEach(item => {
-    const matchGender =
-      selectedGender === "all" ||
-      item.classList.contains(selectedGender);
-
-    const matchLocation =
-      selectedLocation === "all" ||
-      item.classList.contains(selectedLocation);
-
-    if (matchGender && matchLocation) {
-      item.style.display = "block";
-    } else {
-      item.style.display = "none";
-    }
-  });
-}
-
-  </script>
+</script>
 
 </body>
-
 </html>
