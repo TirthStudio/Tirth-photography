@@ -438,40 +438,39 @@
 
       <!-- GENDER FILTERS -->
 
-      <div class="gallery-filters">
+<div class="gallery-filters">
 
-        <button onclick="filterGallery('all')">
-          All Kids
-        </button>
+  <button onclick="filterGender('all')">
+    All Kids
+  </button>
 
-        <button onclick="filterGallery('boys')">
-          Boys
-        </button>
+  <button onclick="filterGender('boys')">
+    Boys
+  </button>
 
-        <button onclick="filterGallery('girls')">
-          Girls
-        </button>
+  <button onclick="filterGender('girls')">
+    Girls
+  </button>
 
-      </div>
+</div>
 
-      <!-- LOCATION FILTERS -->
+<!-- LOCATION FILTERS -->
 
-      <div class="gallery-filters secondary">
+<div class="gallery-filters secondary">
 
-        <button onclick="filterGallery('all')">
-          All Photos
-        </button>
+  <button onclick="filterLocation('all')">
+    All Photos
+  </button>
 
-        <button onclick="filterGallery('outdoor')">
-          Outdoor
-        </button>
+  <button onclick="filterLocation('outdoor')">
+    Outdoor
+  </button>
 
-        <button onclick="filterGallery('indoor')">
-          Indoor
-        </button>
+  <button onclick="filterLocation('indoor')">
+    Indoor
+  </button>
 
-      </div>
-
+</div>
       <!-- GALLERY -->
 
       <div class="gallery-grid" id="kids-gallery"></div>
@@ -553,31 +552,61 @@ else if (i >= 818 && i <= 1092) {
 
         }
 
-        // FILTER FUNCTION
+        // ACTIVE FILTERS
 
-        function filterGallery(category) {
+let selectedGender = "all";
+let selectedLocation = "all";
 
-          const items =
-            document.querySelectorAll(".gallery-item");
+// GENDER FILTER
 
-          items.forEach(item => {
+function filterGender(gender) {
 
-            if (
-              category === "all" ||
-              item.classList.contains(category)
-            ) {
+  selectedGender = gender;
 
-              item.style.display = "block";
+  applyFilters();
 
-            } else {
+}
 
-              item.style.display = "none";
+// LOCATION FILTER
 
-            }
+function filterLocation(location) {
 
-          });
+  selectedLocation = location;
 
-        }
+  applyFilters();
+
+}
+
+// APPLY FILTERS
+
+function applyFilters() {
+
+  const items =
+    document.querySelectorAll(".gallery-item");
+
+  items.forEach(item => {
+
+    const genderMatch =
+      selectedGender === "all" ||
+      item.classList.contains(selectedGender);
+
+    const locationMatch =
+      selectedLocation === "all" ||
+      item.classList.contains(selectedLocation);
+
+    if (genderMatch && locationMatch) {
+
+      item.style.display = "block";
+
+    } else {
+
+      item.style.display = "none";
+
+    }
+
+  });
+
+}
 
       </script>
 
