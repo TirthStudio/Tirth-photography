@@ -804,6 +804,26 @@
 
     loadImages();
 
+    function applyFilters() {
+  const items = document.querySelectorAll(".gallery-item");
+
+  items.forEach(item => {
+    const matchGender =
+      selectedGender === "all" ||
+      item.classList.contains(selectedGender);
+
+    const matchLocation =
+      selectedLocation === "all" ||
+      item.classList.contains(selectedLocation);
+
+    if (matchGender && matchLocation) {
+      item.style.display = "block";
+    } else {
+      item.style.display = "none";
+    }
+  });
+}
+
   </script>
 
 </body>
