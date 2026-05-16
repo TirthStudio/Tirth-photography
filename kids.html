@@ -258,6 +258,11 @@
       color:black;
     }
 
+    .gallery-filters button.active{
+      background:#d4ab72;
+      color:black;
+    }
+
     /* GALLERY GRID */
 
     .gallery-grid{
@@ -489,15 +494,24 @@
 
       <div class="gallery-filters">
 
-        <button onclick="filterGender('all')">
+        <button
+          class="gender-btn active"
+          onclick="filterGender('all', this)"
+        >
           All Kids
         </button>
 
-        <button onclick="filterGender('boys')">
+        <button
+          class="gender-btn"
+          onclick="filterGender('boys', this)"
+        >
           Boys
         </button>
 
-        <button onclick="filterGender('girls')">
+        <button
+          class="gender-btn"
+          onclick="filterGender('girls', this)"
+        >
           Girls
         </button>
 
@@ -507,15 +521,24 @@
 
       <div class="gallery-filters secondary">
 
-        <button onclick="filterLocation('all')">
+        <button
+          class="location-btn active"
+          onclick="filterLocation('all', this)"
+        >
           All Photos
         </button>
 
-        <button onclick="filterLocation('outdoor')">
+        <button
+          class="location-btn"
+          onclick="filterLocation('outdoor', this)"
+        >
           Outdoor
         </button>
 
-        <button onclick="filterLocation('indoor')">
+        <button
+          class="location-btn"
+          onclick="filterLocation('indoor', this)"
+        >
           Indoor
         </button>
 
@@ -611,21 +634,14 @@
     const gallery =
       document.getElementById("kids-gallery");
 
-    // TOTAL IMAGES
-
     const totalImages = 1092;
-
-    // LOAD MORE COUNT
 
     const imagesPerLoad = 60;
 
-    // CURRENT IMAGE
-
     let currentImage = 1;
 
-    // FILTERS
-
     let selectedGender = "all";
+
     let selectedLocation = "all";
 
     // ALT TEXTS
@@ -677,37 +693,37 @@
           ? "outdoor"
           : "indoor";
 
-       // GENDER
+        // GENDER
 
-let gender = "";
+        let gender = "";
 
-// BOYS
+        // BOYS
 
-if (
+        if (
 
-  (i >= 1 && i <= 307) ||
+          (i >= 1 && i <= 307) ||
 
-  (i >= 586 && i <= 817)
+          (i >= 586 && i <= 817)
 
-) {
+        ) {
 
-  gender = "boys";
+          gender = "boys";
 
-}
+        }
 
-// GIRLS
+        // GIRLS
 
-else if (
+        else if (
 
-  (i >= 308 && i <= 585) ||
+          (i >= 308 && i <= 585) ||
 
-  (i >= 818 && i <= 1092)
+          (i >= 818 && i <= 1092)
 
-) {
+        ) {
 
-  gender = "girls";
+          gender = "girls";
 
-}
+        }
 
         // ALT TEXT
 
@@ -723,7 +739,7 @@ else if (
               i % girlsAltTexts.length
             ];
 
-        // CREATE IMAGE
+        // GENERATE IMAGE
 
         gallery.innerHTML += `
 
@@ -763,9 +779,22 @@ else if (
 
     // GENDER FILTER
 
-    function filterGender(gender) {
+    function filterGender(
+      gender,
+      button
+    ) {
 
       selectedGender = gender;
+
+      document
+        .querySelectorAll(".gender-btn")
+        .forEach(btn => {
+
+          btn.classList.remove("active");
+
+        });
+
+      button.classList.add("active");
 
       applyFilters();
 
@@ -773,9 +802,22 @@ else if (
 
     // LOCATION FILTER
 
-    function filterLocation(location) {
+    function filterLocation(
+      location,
+      button
+    ) {
 
       selectedLocation = location;
+
+      document
+        .querySelectorAll(".location-btn")
+        .forEach(btn => {
+
+          btn.classList.remove("active");
+
+        });
+
+      button.classList.add("active");
 
       applyFilters();
 
