@@ -310,6 +310,31 @@
       z-index:9999;
     }
 
+    .gallery-filters{
+  display:flex;
+  justify-content:center;
+  gap:12px;
+  margin-bottom:35px;
+  flex-wrap:wrap;
+}
+
+.gallery-filters button{
+  padding:12px 24px;
+  border:none;
+  border-radius:50px;
+  background:#111;
+  color:white;
+  cursor:pointer;
+  transition:0.3s;
+  font-size:14px;
+  border:1px solid rgba(255,255,255,0.08);
+}
+
+.gallery-filters button:hover{
+  background:#d4ab72;
+  color:black;
+}
+
     @media(max-width:991px){
 
       .hero-content h2{
@@ -406,8 +431,6 @@
 
       </div>
 
-      <div class="gallery-grid">
-
 <!-- FILTER BUTTONS -->
 <div class="gallery-filters">
   <button onclick="filterGallery('all')">All Photos</button>
@@ -481,8 +504,6 @@
 </script>
 
       </div>
-
-    </div>
 
   </section>
 
