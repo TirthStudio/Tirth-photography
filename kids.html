@@ -801,45 +801,133 @@
 
     // APPLY FILTERS
 
-    function applyFilters() {
+    function loadImages() {
 
-      const items =
-        document.querySelectorAll(".gallery-item");
+  let loaded = 0;
 
-      items.forEach(item => {
+  while (
+    currentImage <= totalImages &&
+    loaded < imagesPerLoad
+  ) {
 
-        const genderMatch =
+    let i;
 
-          selectedGender === "all" ||
+    // ROTATING MIXED LOADING
 
-          item.classList.contains(
-            selectedGender
-          );
+    if (loaded % 4 === 0) {
 
-        const locationMatch =
-
-          selectedLocation === "all" ||
-
-          item.classList.contains(
-            selectedLocation
-          );
-
-        if (
-          genderMatch &&
-          locationMatch
-        ) {
-
-          item.style.display = "block";
-
-        } else {
-
-          item.style.display = "none";
-
-        }
-
-      });
+      i = 1 + Math.floor(loaded / 4);
 
     }
+
+    else if (loaded % 4 === 1) {
+
+      i = 308 + Math.floor(loaded / 4);
+
+    }
+
+    else if (loaded % 4 === 2) {
+
+      i = 586 + Math.floor(loaded / 4);
+
+    }
+
+    else {
+
+      i = 818 + Math.floor(loaded / 4);
+
+    }
+
+    // STOP IF RANGE EXCEEDED
+
+    if (
+      i > totalImages
+    ) {
+
+      loaded++;
+      continue;
+
+    }
+
+    // LOCATION
+
+    const location =
+      i <= 585
+      ? "outdoor"
+      : "indoor";
+
+    // GENDER
+
+    let gender = "";
+
+    if (
+      (i >= 1 && i <= 307) ||
+      (i >= 586 && i <= 817)
+    ) {
+
+      gender = "boys";
+
+    }
+
+    else {
+
+      gender = "girls";
+
+    }
+
+    // ALT TEXT
+
+    const altText =
+
+      gender === "boys"
+
+      ? boysAltTexts[
+          i % boysAltTexts.length
+        ]
+
+      : girlsAltTexts[
+          i % girlsAltTexts.length
+        ];
+
+    // ADD IMAGE
+
+    gallery.innerHTML += `
+
+      <div
+        class="gallery-item ${gender} ${location}"
+      >
+
+        <img
+          src="assets/kids/kids-${i}.jpg"
+          alt="${altText}"
+          loading="lazy"
+        >
+
+      </div>
+
+    `;
+
+    loaded++;
+
+    currentImage++;
+
+  }
+
+  applyFilters();
+
+  // HIDE BUTTON
+
+  if (
+    currentImage > totalImages
+  ) {
+
+    document
+      .getElementById("load-more-btn")
+      .style.display = "none";
+
+  }
+
+}
 
     // INITIAL LOAD
 
