@@ -672,110 +672,128 @@
 
     // LOAD IMAGES
 
-    function loadImages() {
+function loadImages() {
 
-      const end =
-        Math.min(
-          currentImage + imagesPerLoad - 1,
-          totalImages
-        );
+  let loaded = 0;
 
-      for (
-        let i = currentImage;
-        i <= end;
-        i++
-      ) {
+  while (
+    loaded < imagesPerLoad &&
+    currentImage <= totalImages
+  ) {
 
-        // LOCATION
+    let i;
 
-        const location =
-          i <= 585
-          ? "outdoor"
-          : "indoor";
+    // SAFE MIXED ORDER
 
-        // GENDER
+    if (currentImage % 4 === 1) {
 
-        let gender = "";
-
-        // BOYS
-
-        if (
-
-          (i >= 1 && i <= 307) ||
-
-          (i >= 586 && i <= 817)
-
-        ) {
-
-          gender = "boys";
-
-        }
-
-        // GIRLS
-
-        else if (
-
-          (i >= 308 && i <= 585) ||
-
-          (i >= 818 && i <= 999)
-
-        ) {
-
-          gender = "girls";
-
-        }
-
-        // ALT TEXT
-
-        const altText =
-
-          gender === "boys"
-
-          ? boysAltTexts[
-              i % boysAltTexts.length
-            ]
-
-          : girlsAltTexts[
-              i % girlsAltTexts.length
-            ];
-
-        // GENERATE IMAGE
-
-        gallery.innerHTML += `
-
-          <div
-            class="gallery-item ${gender} ${location}"
-          >
-
-            <img
-              src="assets/kids/kids-${i}.jpg"
-              alt="${altText}"
-              loading="lazy"
-            >
-
-          </div>
-
-        `;
-
-      }
-
-      currentImage += imagesPerLoad;
-
-      applyFilters();
-
-      // HIDE BUTTON
-
-      if (
-        currentImage > totalImages
-      ) {
-
-        document
-          .getElementById("load-more-btn")
-          .style.display = "none";
-
-      }
+      i = Math.floor(currentImage / 4) + 1;
 
     }
+
+    else if (currentImage % 4 === 2) {
+
+      i = Math.floor(currentImage / 4) + 308;
+
+    }
+
+    else if (currentImage % 4 === 3) {
+
+      i = Math.floor(currentImage / 4) + 586;
+
+    }
+
+    else {
+
+      i = Math.floor(currentImage / 4) + 818;
+
+    }
+
+    // SKIP INVALID
+
+    if (i > totalImages) {
+      currentImage++;
+      continue;
+    }
+
+    // LOCATION
+
+    const location =
+      i <= 585
+      ? "outdoor"
+      : "indoor";
+
+    // GENDER
+
+    let gender = "";
+
+    if (
+      (i >= 1 && i <= 307) ||
+      (i >= 586 && i <= 817)
+    ) {
+
+      gender = "boys";
+
+    }
+
+    else {
+
+      gender = "girls";
+
+    }
+
+    // ALT
+
+    const altText =
+
+      gender === "boys"
+
+      ? boysAltTexts[
+          i % boysAltTexts.length
+        ]
+
+      : girlsAltTexts[
+          i % girlsAltTexts.length
+        ];
+
+    // CREATE ITEM
+
+    const item =
+      document.createElement("div");
+
+    item.className =
+      `gallery-item ${gender} ${location}`;
+
+    item.innerHTML = `
+      <img
+        src="assets/kids/kids-${i}.jpg"
+        alt="${altText}"
+        loading="lazy"
+      >
+    `;
+
+    gallery.appendChild(item);
+
+    loaded++;
+    currentImage++;
+
+  }
+
+  applyFilters();
+
+  // HIDE BUTTON
+
+  if (
+    currentImage > totalImages
+  ) {
+
+    document
+      .getElementById("load-more-btn")
+      .style.display = "none";
+
+  }
+
+}
 
     // GENDER FILTER
 
