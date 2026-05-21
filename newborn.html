@@ -1,11 +1,14 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
 
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
 
   <title>
     Newborn Photography Ahmedabad | Tirth Modelling Studio
@@ -21,16 +24,25 @@
     content="newborn photography Ahmedabad, baby photoshoot Ahmedabad, newborn studio Gujarat, baby photographer Ahmedabad"
   >
 
-  <meta property="og:title" content="Newborn Photography | Tirth Modelling Studio">
+  <meta
+    property="og:title"
+    content="Newborn Photography | Tirth Modelling Studio"
+  >
 
   <meta
     property="og:description"
     content="Premium newborn baby photography with creative luxury themes and props."
   >
 
-  <meta property="og:image" content="assets/newborn/newborn-cover.jpg">
+  <meta
+    property="og:image"
+    content="assets/newborn/newborn-cover.jpg"
+  >
 
-  <meta property="og:type" content="website">
+  <meta
+    property="og:type"
+    content="website"
+  >
 
   <link
     rel="icon"
@@ -38,9 +50,16 @@
     href="assets/favicon.png"
   >
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+  >
 
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
 
   <link
     href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap"
@@ -208,6 +227,35 @@
       font-family:'Cormorant Garamond',serif;
     }
 
+    /* FILTERS */
+
+    .gallery-filters{
+      display:flex;
+      justify-content:center;
+      gap:12px;
+      margin-bottom:40px;
+      flex-wrap:wrap;
+    }
+
+    .gallery-filters button{
+      padding:12px 24px;
+      border:none;
+      border-radius:50px;
+      background:#111;
+      color:white;
+      cursor:pointer;
+      transition:0.3s;
+      font-size:14px;
+      border:1px solid rgba(255,255,255,0.08);
+    }
+
+    .gallery-filters button:hover{
+      background:#d4ab72;
+      color:black;
+    }
+
+    /* GALLERY GRID */
+
     .gallery-grid{
       columns:3 320px;
       column-gap:22px;
@@ -219,6 +267,7 @@
       border-radius:24px;
       border:1px solid rgba(255,255,255,0.08);
       background:#101010;
+      break-inside:avoid;
     }
 
     .gallery-item img{
@@ -227,6 +276,29 @@
 
     .gallery-item:hover img{
       transform:scale(1.04);
+    }
+
+    /* LOAD MORE */
+
+    .load-more-wrapper{
+      text-align:center;
+      margin-top:50px;
+    }
+
+    #load-more-btn{
+      padding:14px 34px;
+      border:none;
+      border-radius:50px;
+      background:#d4ab72;
+      color:black;
+      font-size:15px;
+      cursor:pointer;
+      transition:0.3s;
+      font-weight:600;
+    }
+
+    #load-more-btn:hover{
+      transform:translateY(-3px);
     }
 
     /* CTA */
@@ -310,31 +382,6 @@
       z-index:9999;
     }
 
-    .gallery-filters{
-  display:flex;
-  justify-content:center;
-  gap:12px;
-  margin-bottom:35px;
-  flex-wrap:wrap;
-}
-
-.gallery-filters button{
-  padding:12px 24px;
-  border:none;
-  border-radius:50px;
-  background:#111;
-  color:white;
-  cursor:pointer;
-  transition:0.3s;
-  font-size:14px;
-  border:1px solid rgba(255,255,255,0.08);
-}
-
-.gallery-filters button:hover{
-  background:#d4ab72;
-  color:black;
-}
-
     @media(max-width:991px){
 
       .hero-content h2{
@@ -379,7 +426,10 @@
 
       </div>
 
-      <a href="index.html" class="back-btn">
+      <a
+        href="index.html"
+        class="back-btn"
+      >
         ← Back To Home
       </a>
 
@@ -431,77 +481,43 @@
 
       </div>
 
-<!-- FILTER BUTTONS -->
-<div class="gallery-filters">
-  <button onclick="filterGallery('all')">All Photos</button>
-  <button onclick="filterGallery('outdoor')">Outdoor</button>
-  <button onclick="filterGallery('indoor')">Indoor</button>
-</div>
+      <!-- FILTER BUTTONS -->
 
-<!-- GALLERY -->
-<div class="gallery-grid" id="newborn-gallery"></div>
+      <div class="gallery-filters">
 
-<script>
-  const gallery = document.getElementById("newborn-gallery");
+        <button onclick="filterGallery('all')">
+          All Photos
+        </button>
 
-  // ALT TEXTS
-  const outdoorAltTexts = [
-    "Outdoor Newborn Photography Ahmedabad",
-    "Luxury Outdoor Baby Photoshoot Ahmedabad",
-    "Natural Light Newborn Photography Ahmedabad",
-    "Creative Outdoor Infant Photography Ahmedabad"
-  ];
+        <button onclick="filterGallery('outdoor')">
+          Outdoor
+        </button>
 
-  const indoorAltTexts = [
-    "Indoor Newborn Photography Ahmedabad",
-    "Luxury Indoor Baby Photoshoot Ahmedabad",
-    "Studio Newborn Photography Ahmedabad",
-    "Creative Newborn Theme Photography Ahmedabad"
-  ];
+        <button onclick="filterGallery('indoor')">
+          Indoor
+        </button>
 
-  // GENERATE IMAGES
-  for (let i = 1; i <= 424; i++) {
-
-    const category =
-      i <= 58 ? "outdoor" : "indoor";
-
-    const altText =
-      category === "outdoor"
-      ? outdoorAltTexts[i % outdoorAltTexts.length]
-      : indoorAltTexts[i % indoorAltTexts.length];
-
-    gallery.innerHTML += `
-      <div class="gallery-item ${category}">
-        <img
-          src="assets/newborn/newborn-${i}.jpg"
-          alt="${altText}"
-          loading="lazy"
-        >
       </div>
-    `;
-  }
 
-  // FILTER FUNCTION
-  function filterGallery(category) {
+      <!-- GALLERY -->
 
-    const items =
-      document.querySelectorAll(".gallery-item");
+      <div
+        class="gallery-grid"
+        id="newborn-gallery"
+      ></div>
 
-    items.forEach(item => {
+      <!-- LOAD MORE -->
 
-      if (
-        category === "all" ||
-        item.classList.contains(category)
-      ) {
-        item.style.display = "block";
-      } else {
-        item.style.display = "none";
-      }
+      <div class="load-more-wrapper">
 
-    });
+        <button
+          id="load-more-btn"
+          onclick="loadImages()"
+        >
+          Load More
+        </button>
 
-  }
-</script>
+      </div>
 
     </div>
 
@@ -552,7 +568,8 @@
   </section>
 
   <footer>
-    © 2026 Tirth Modelling Studio. All Rights Reserved.
+    © 2026 Tirth Modelling Studio.
+    All Rights Reserved.
   </footer>
 
   <!-- STICKY WHATSAPP -->
@@ -565,7 +582,211 @@
     <i class="fab fa-whatsapp"></i>
   </a>
 
+  <!-- SCRIPT -->
+
+  <script>
+
+    const gallery =
+      document.getElementById("newborn-gallery");
+
+    const totalImages = 424;
+
+    const imagesPerLoad = 60;
+
+    let currentImage = 1;
+
+    let selectedCategory = "all";
+
+    // ALT TEXTS
+
+    const outdoorAltTexts = [
+
+      "Outdoor Newborn Photography Ahmedabad",
+
+      "Luxury Outdoor Baby Photoshoot Ahmedabad",
+
+      "Natural Light Newborn Photography Ahmedabad",
+
+      "Creative Outdoor Infant Photography Ahmedabad"
+
+    ];
+
+    const indoorAltTexts = [
+
+      "Indoor Newborn Photography Ahmedabad",
+
+      "Luxury Indoor Baby Photoshoot Ahmedabad",
+
+      "Studio Newborn Photography Ahmedabad",
+
+      "Creative Newborn Theme Photography Ahmedabad"
+
+    ];
+
+    // LOAD IMAGES
+
+    function loadImages() {
+
+      let loaded = 0;
+
+      while (
+        loaded < imagesPerLoad
+      ) {
+
+        let i;
+
+        // MIXED ORDER
+
+        const adjusted =
+          currentImage - 1;
+
+        const group =
+          Math.floor(adjusted / 2);
+
+        const type =
+          adjusted % 2;
+
+        // OUTDOOR
+
+        if (type === 0) {
+
+          i = group + 1;
+
+          if (i > 58) {
+
+            currentImage++;
+            continue;
+
+          }
+
+        }
+
+        // INDOOR
+
+        else {
+
+          i = group + 59;
+
+          if (i > 424) {
+
+            currentImage++;
+            continue;
+
+          }
+
+        }
+
+        // CATEGORY
+
+        const category =
+          i <= 58
+          ? "outdoor"
+          : "indoor";
+
+        // ALT TEXT
+
+        const altText =
+
+          category === "outdoor"
+
+          ? outdoorAltTexts[
+              i % outdoorAltTexts.length
+            ]
+
+          : indoorAltTexts[
+              i % indoorAltTexts.length
+            ];
+
+        // CREATE ITEM
+
+        const item =
+          document.createElement("div");
+
+        item.className =
+          `gallery-item ${category}`;
+
+        item.innerHTML = `
+
+          <img
+            src="assets/newborn/newborn-${i}.jpg"
+            alt="${altText}"
+            loading="lazy"
+          >
+
+        `;
+
+        gallery.appendChild(item);
+
+        loaded++;
+        currentImage++;
+
+      }
+
+      applyFilters();
+
+      // HIDE BUTTON
+
+      if (
+        currentImage > 424
+      ) {
+
+        document
+          .getElementById("load-more-btn")
+          .style.display = "none";
+
+      }
+
+    }
+
+    // FILTER FUNCTION
+
+    function filterGallery(category) {
+
+      selectedCategory = category;
+
+      applyFilters();
+
+    }
+
+    // APPLY FILTERS
+
+    function applyFilters() {
+
+      const items =
+        document.querySelectorAll(".gallery-item");
+
+      items.forEach(item => {
+
+        if (
+
+          selectedCategory === "all" ||
+
+          item.classList.contains(
+            selectedCategory
+          )
+
+        ) {
+
+          item.style.display = "block";
+
+        }
+
+        else {
+
+          item.style.display = "none";
+
+        }
+
+      });
+
+    }
+
+    // INITIAL LOAD
+
+    loadImages();
+
+  </script>
+
 </body>
 
 </html>
-```
