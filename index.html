@@ -205,13 +205,19 @@
 
     /* HERO */
 
-    .hero{
-      height:100vh;
-      position:relative;
-      overflow:hidden;
-      display:flex;
-      align-items:center;
-    }
+   .hero{
+  height:100vh;
+  position:relative;
+  overflow:hidden;
+  display:flex;
+  align-items:center;
+
+  background-image:url('assets/hero-image.jpg');
+  background-size:cover;
+  background-position:center;
+  background-repeat:no-repeat;
+  background-attachment:fixed;
+}
 
     .hero-bg{
       position:absolute;
@@ -603,6 +609,14 @@
 
     }
 
+    @media(max-width:991px){
+
+      .hero{
+        background-attachment:scroll;
+      }
+
+    }
+
   </style>
 
 </head>
@@ -678,12 +692,6 @@
   <!-- HERO -->
 
   <section class="hero">
-
-    <img
-      src="assets/hero-image.jpg"
-      class="hero-bg"
-      alt="Tirth Modelling Studio"
-    >
 
     <div class="hero-overlay"></div>
 
