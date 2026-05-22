@@ -148,7 +148,7 @@
       color:#d4ab72;
     }
 
-    /* MOBILE MENU */
+/* MOBILE MENU */
 
 .menu-toggle{
   display:none;
@@ -160,15 +160,13 @@
   position:fixed;
   top:0;
   right:-100%;
-  width:280px;
+  width:320px;
   height:100vh;
-  background:#0d0d0d;
+  background:#0b0b0b;
   z-index:99999;
-  display:flex;
-  flex-direction:column;
-  padding:100px 40px;
-  gap:30px;
-  transition:0.4s;
+  padding:40px 35px;
+  transition:0.45s ease;
+  overflow-y:auto;
   border-left:1px solid rgba(255,255,255,0.08);
 }
 
@@ -176,26 +174,59 @@
   right:0;
 }
 
-.mobile-menu a{
-  color:white;
-  text-decoration:none;
-  font-size:16px;
-  font-family:'Inter',sans-serif;
-  font-weight:500;
-  letter-spacing:1px;
-  transition:0.3s;
-}
-    
-.mobile-menu a:hover{
-  color:#d4ab72;
-}
-    
 .close-menu{
   position:absolute;
-  top:30px;
-  right:30px;
+  top:25px;
+  right:25px;
   font-size:28px;
   cursor:pointer;
+  color:white;
+}
+
+.mobile-menu-header{
+  margin-top:40px;
+  margin-bottom:50px;
+}
+
+.mobile-menu-header p{
+  color:#d4ab72;
+  letter-spacing:4px;
+  font-size:12px;
+  margin-bottom:10px;
+}
+
+.mobile-menu-header h2{
+  font-size:42px;
+  font-family:'Cormorant Garamond',serif;
+  line-height:1;
+}
+
+.mobile-menu-section{
+  margin-bottom:45px;
+}
+
+.mobile-menu-section span{
+  display:block;
+  color:#777;
+  font-size:13px;
+  letter-spacing:3px;
+  margin-bottom:18px;
+  text-transform:uppercase;
+}
+
+.mobile-menu-section a{
+  display:block;
+  color:white;
+  text-decoration:none;
+  font-size:18px;
+  font-weight:500;
+  margin-bottom:18px;
+  transition:0.3s;
+}
+
+.mobile-menu-section a:hover{
+  color:#d4ab72;
+  transform:translateX(6px);
 }
 
 @media(max-width:991px){
@@ -678,21 +709,51 @@
 
 <div class="mobile-menu">
 
+  <!-- CLOSE BUTTON -->
+
   <div class="close-menu">
 
     <i class="fas fa-times"></i>
 
   </div>
 
-  <a href="newborn.html">Newborn</a>
+  <!-- TOP TITLE -->
 
-  <a href="kids.html">Kids</a>
+  <div class="mobile-menu-header">
 
-  <a href="maternity.html">Maternity</a>
+    <p>PORTFOLIO</p>
 
-  <a href="family.html">Family</a>
+    <h2>Photo Gallery</h2>
 
-  <a href="prewedding.html">Pre-Wedding</a>
+  </div>
+
+  <!-- MENU SECTIONS -->
+
+  <div class="mobile-menu-section">
+
+    <span>Photography</span>
+
+    <a href="newborn.html">
+      Newborn Photography
+    </a>
+
+    <a href="kids.html">
+      Kids Photography
+    </a>
+
+    <a href="maternity.html">
+      Maternity Photography
+    </a>
+
+    <a href="family.html">
+      Family Portraits
+    </a>
+
+    <a href="prewedding.html">
+      Pre-Wedding Shoots
+    </a>
+
+  </div>
 
 </div>
 
