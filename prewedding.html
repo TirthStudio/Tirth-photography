@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>
+    Pre-Wedding Photography Ahmedabad | Tirth Modelling Studio
+  </title>
+
+  <meta
+    name="description"
+    content="Luxury pre-wedding photography in Ahmedabad with cinematic couple portraits, creative storytelling and premium outdoor photoshoots by Tirth Modelling Studio."
+  >
+
+  <meta
+    name="keywords"
+    content="pre wedding photography Ahmedabad, cinematic pre wedding shoot Ahmedabad, couple photoshoot Ahmedabad, wedding photography Gujarat, luxury pre wedding photography"
+  >
+
+  <meta
+    property="og:title"
+    content="Pre-Wedding Photography | Tirth Modelling Studio"
+  >
+
+  <meta
+    property="og:description"
+    content="Premium cinematic pre-wedding photography with luxury storytelling concepts."
+  >
+
+  <meta
+    property="og:image"
+    content="assets/prewedding/prewedding-cover.jpg"
+  >
+
+  <meta
+    property="og:type"
+    content="website"
+  >
+
+  <link
+    rel="icon"
+    type="image/png"
+    href="assets/favicon.png"
+  >
+
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+  >
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+  >
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    body{
+      background:#050505;
+      color:white;
+      font-family:'Inter',sans-serif;
+      overflow-x:hidden;
+    }
+
+    html{
+      scroll-behavior:smooth;
+    }
+
+    .container{
+      width:90%;
+      max-width:1400px;
+      margin:auto;
+    }
+
+    img{
+      width:100%;
+      display:block;
+    }
+
+    a{
+      text-decoration:none;
+    }
+
+    /* NAVBAR */
+
+    .navbar{
+      position:fixed;
+      width:100%;
+      top:0;
+      left:0;
+      z-index:1000;
+      background:rgba(0,0,0,0.55);
+      backdrop-filter:blur(14px);
+      border-bottom:1px solid rgba(255,255,255,0.08);
+    }
+
+    .nav-wrapper{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:18px 0;
+    }
+
+    .logo h1{
+      font-size:38px;
+      letter-spacing:4px;
+      font-family:'Cormorant Garamond',serif;
+    }
+
+    .logo span{
+      color:#d4ab72;
+      font-size:11px;
+      letter-spacing:5px;
+    }
+
+    .back-btn{
+      color:white;
+      border:1px solid rgba(255,255,255,0.2);
+      padding:12px 22px;
+      border-radius:50px;
+      transition:0.3s;
+    }
+
+    .back-btn:hover{
+      background:#d4ab72;
+      color:black;
+      border-color:#d4ab72;
+    }
+
+    /* HERO */
+
+    .hero{
+      height:75vh;
+      position:relative;
+      overflow:hidden;
+      display:flex;
+      align-items:center;
+    }
+
+    .hero img{
+      position:absolute;
+      inset:0;
+      width:100%;
+      height:100%;
+      object-fit:cover;
+    }
+
+    .hero-overlay{
+      position:absolute;
+      inset:0;
+      background:linear-gradient(
+        to right,
+        rgba(0,0,0,0.85),
+        rgba(0,0,0,0.3)
+      );
+    }
+
+    .hero-content{
+      position:relative;
+      z-index:2;
+      max-width:700px;
+    }
+
+    .hero-content p{
+      color:#d4ab72;
+      letter-spacing:4px;
+      margin-bottom:18px;
+    }
+
+    .hero-content h2{
+      font-size:82px;
+      line-height:0.95;
+      margin-bottom:25px;
+      font-family:'Cormorant Garamond',serif;
+    }
+
+    .hero-content span{
+      color:#d7d7d7;
+      line-height:1.9;
+      display:block;
+      font-size:17px;
+    }
+
+    /* GALLERY */
+
+    .gallery-section{
+      padding:100px 0;
+    }
+
+    .section-title{
+      text-align:center;
+      margin-bottom:70px;
+    }
+
+    .section-title p{
+      color:#d4ab72;
+      letter-spacing:4px;
+      margin-bottom:15px;
+    }
+
+    .section-title h2{
+      font-size:60px;
+      font-family:'Cormorant Garamond',serif;
+    }
+
+    /* GALLERY GRID */
+
+    .gallery-grid{
+      columns:3 320px;
+      column-gap:22px;
+    }
+
+    .gallery-item{
+      margin-bottom:22px;
+      overflow:hidden;
+      border-radius:24px;
+      border:1px solid rgba(255,255,255,0.08);
+      background:#101010;
+      break-inside:avoid;
+    }
+
+    .gallery-item img{
+      transition:0.5s;
+    }
+
+    .gallery-item:hover img{
+      transform:scale(1.04);
+    }
+
+    /* LOAD MORE */
+
+    .load-more-wrapper{
+      text-align:center;
+      margin-top:50px;
+    }
+
+    #load-more-btn{
+      padding:14px 34px;
+      border:none;
+      border-radius:50px;
+      background:#d4ab72;
+      color:black;
+      font-size:15px;
+      cursor:pointer;
+      transition:0.3s;
+      font-weight:600;
+    }
+
+    #load-more-btn:hover{
+      transform:translateY(-3px);
+    }
+
+    /* CTA */
+
+    .cta-section{
+      padding-bottom:100px;
+    }
+
+    .cta-box{
+      background:#101010;
+      border-radius:30px;
+      padding:60px;
+      text-align:center;
+      border:1px solid rgba(255,255,255,0.08);
+    }
+
+    .cta-box h2{
+      font-size:58px;
+      margin-bottom:20px;
+      font-family:'Cormorant Garamond',serif;
+    }
+
+    .cta-box p{
+      color:#cfcfcf;
+      line-height:1.9;
+      max-width:850px;
+      margin:auto;
+      margin-bottom:35px;
+    }
+
+    .cta-buttons{
+      display:flex;
+      justify-content:center;
+      gap:20px;
+      flex-wrap:wrap;
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding:15px 28px;
+      border-radius:50px;
+      transition:0.3s;
+      font-weight:600;
+    }
+
+    .gold-btn{
+      background:#d4ab72;
+      color:black;
+    }
+
+    .outline-btn{
+      border:1px solid rgba(255,255,255,0.2);
+      color:white;
+    }
+
+    .btn:hover{
+      transform:translateY(-3px);
+    }
+
+    footer{
+      padding:40px 0;
+      text-align:center;
+      color:#777;
+    }
+
+    .sticky-whatsapp{
+      position:fixed;
+      right:25px;
+      bottom:25px;
+      width:65px;
+      height:65px;
+      background:#25D366;
+      border-radius:50%;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      color:white;
+      font-size:32px;
+      z-index:9999;
+    }
+
+    @media(max-width:991px){
+
+      .hero-content h2{
+        font-size:54px;
+      }
+
+      .section-title h2{
+        font-size:42px;
+      }
+
+      .cta-box{
+        padding:40px 25px;
+      }
+
+      .cta-box h2{
+        font-size:42px;
+      }
+
+      .cta-buttons{
+        flex-direction:column;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+
+  <header class="navbar">
+
+    <div class="container nav-wrapper">
+
+      <div class="logo">
+
+        <h1>TIRTH</h1>
+
+        <span>MODELLING STUDIO</span>
+
+      </div>
+
+      <a
+        href="index.html"
+        class="back-btn"
+      >
+        ← Back To Home
+      </a>
+
+    </div>
+
+  </header>
+
+  <!-- HERO -->
+
+  <section class="hero">
+
+    <img
+      src="assets/prewedding/prewedding-cover.jpg"
+      alt="Pre Wedding Photography Ahmedabad"
+    >
+
+    <div class="hero-overlay"></div>
+
+    <div class="container hero-content">
+
+      <p>PRE-WEDDING PHOTOGRAPHY</p>
+
+      <h2>
+        Cinematic Pre-Wedding <br>
+        Photography
+      </h2>
+
+      <span>
+        Luxury cinematic pre-wedding photography with emotional storytelling, creative couple portraits and premium destination concepts in Ahmedabad.
+      </span>
+
+    </div>
+
+  </section>
+
+  <!-- GALLERY -->
+
+  <section class="gallery-section">
+
+    <div class="container">
+
+      <div class="section-title">
+
+        <p>PHOTO GALLERY</p>
+
+        <h2>
+          Pre-Wedding Portfolio
+        </h2>
+
+      </div>
+
+      <!-- GALLERY -->
+
+      <div
+        class="gallery-grid"
+        id="prewedding-gallery"
+      ></div>
+
+      <!-- LOAD MORE -->
+
+      <div class="load-more-wrapper">
+
+        <button
+          id="load-more-btn"
+          onclick="loadImages()"
+        >
+          Load More
+        </button>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- CTA -->
+
+  <section class="cta-section">
+
+    <div class="container">
+
+      <div class="cta-box">
+
+        <h2>
+          Book Your Pre-Wedding Shoot
+        </h2>
+
+        <p>
+          Tirth Modelling Studio offers cinematic pre-wedding photography with luxury storytelling, emotional couple portraits and premium outdoor concepts in Ahmedabad.
+        </p>
+
+        <div class="cta-buttons">
+
+          <a
+            href="https://wa.me/917624029370"
+            class="btn gold-btn"
+            target="_blank"
+          >
+            <i class="fab fa-whatsapp"></i>
+            WhatsApp Now
+          </a>
+
+          <a
+            href="https://www.instagram.com/tirthstudiophotography"
+            class="btn outline-btn"
+            target="_blank"
+          >
+            <i class="fab fa-instagram"></i>
+            Follow Instagram
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <footer>
+    © 2026 Tirth Modelling Studio.
+    All Rights Reserved.
+  </footer>
+
+  <!-- STICKY WHATSAPP -->
+
+  <a
+    href="https://wa.me/917624029370"
+    class="sticky-whatsapp"
+    target="_blank"
+  >
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <!-- SCRIPT -->
+
+  <script>
+
+    const gallery =
+      document.getElementById("prewedding-gallery");
+
+    const totalImages = 258;
+
+    const imagesPerLoad = 60;
+
+    let currentImage = 1;
+
+    const altTexts = [
+
+      "Pre Wedding Photography Ahmedabad",
+
+      "Cinematic Couple Photoshoot Ahmedabad",
+
+      "Luxury Pre Wedding Shoot Ahmedabad",
+
+      "Creative Couple Portrait Ahmedabad",
+
+      "Outdoor Pre Wedding Photography Ahmedabad"
+
+    ];
+
+    // LOAD IMAGES
+
+    function loadImages() {
+
+      let loaded = 0;
+
+      while (
+        loaded < imagesPerLoad &&
+        currentImage <= totalImages
+      ) {
+
+        const item =
+          document.createElement("div");
+
+        item.className =
+          "gallery-item";
+
+        const altText =
+          altTexts[
+            currentImage % altTexts.length
+          ];
+
+        item.innerHTML = `
+
+          <img
+            src="assets/prewedding/prewedding-${currentImage}.jpg"
+            alt="${altText}"
+            loading="lazy"
+          >
+
+        `;
+
+        gallery.appendChild(item);
+
+        loaded++;
+        currentImage++;
+
+      }
+
+      // HIDE BUTTON
+
+      if (
+        currentImage > totalImages
+      ) {
+
+        document
+          .getElementById("load-more-btn")
+          .style.display = "none";
+
+      }
+
+    }
+
+    // INITIAL LOAD
+
+    loadImages();
+
+  </script>
+
+</body>
+
+</html>
