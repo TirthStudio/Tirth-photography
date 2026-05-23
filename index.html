@@ -430,6 +430,43 @@
       line-height:1.8;
     }
 
+    /* TYPEWRITER EFFECT */
+
+.typing-text{
+  overflow:hidden;
+  white-space:nowrap;
+  width:0;
+  animation:typing 4s steps(40,end) forwards;
+}
+
+.usp-box:nth-child(1) .typing-text{
+  animation-delay:0.2s;
+}
+
+.usp-box:nth-child(2) .typing-text{
+  animation-delay:1.2s;
+}
+
+.usp-box:nth-child(3) .typing-text{
+  animation-delay:2.2s;
+}
+
+.usp-box:nth-child(4) .typing-text{
+  animation-delay:3.2s;
+}
+
+@keyframes typing{
+
+  from{
+    width:0;
+  }
+
+  to{
+    width:100%;
+  }
+
+}
+
     /* SERVICES */
 
     .services-grid{
@@ -698,6 +735,16 @@
       }
 
     }
+
+    @media(max-width:991px){
+
+  .typing-text{
+    white-space:normal;
+    width:100%;
+    animation:none;
+  }
+
+}
 
     @media(max-width:991px){
 
