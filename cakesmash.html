@@ -16,12 +16,12 @@
 
   <meta
     name="description"
-    content="Luxury cake smash photography in Ahmedabad with creative birthday themes, premium props, cinematic baby portraits and colorful first birthday photoshoots by Tirth Modelling Studio."
+    content="Luxury cake smash photography in Ahmedabad with creative birthday themes, cinematic baby portraits, outdoor cake smash shoots and premium indoor studio concepts by Tirth Modelling Studio."
   >
 
   <meta
     name="keywords"
-    content="cake smash photography Ahmedabad, first birthday photoshoot Ahmedabad, baby birthday photography Ahmedabad, cake smash studio Ahmedabad, baby photography Gujarat, themed baby photoshoot Ahmedabad"
+    content="cake smash photography Ahmedabad, first birthday photoshoot Ahmedabad, baby birthday photography Ahmedabad, cake smash studio Ahmedabad, outdoor cake smash Ahmedabad, indoor cake smash photography Ahmedabad"
   >
 
   <meta
@@ -31,7 +31,7 @@
 
   <meta
     property="og:description"
-    content="Premium cake smash photography with luxury birthday themes and cinematic baby portraits."
+    content="Premium cake smash photography with cinematic birthday themes and luxury baby portraits."
   >
 
   <meta
@@ -458,7 +458,7 @@
       </h2>
 
       <span>
-        Premium cake smash photography with colorful birthday themes, creative props, cinematic baby portraits and luxury birthday concepts in Ahmedabad.
+        Premium cake smash photography with colorful birthday themes, cinematic baby portraits, outdoor cake smash shoots and luxury indoor studio concepts in Ahmedabad.
       </span>
 
     </div>
@@ -489,11 +489,11 @@
           All Photos
         </button>
 
-        <button onclick="filterGallery('boys')">
+        <button onclick="filterGallery('outdoor')">
           Outdoor
         </button>
 
-        <button onclick="filterGallery('girls')">
+        <button onclick="filterGallery('indoor')">
           Indoor
         </button>
 
@@ -536,7 +536,7 @@
         </h2>
 
         <p>
-          Tirth Modelling Studio offers luxury cake smash photography with cinematic birthday themes, creative props and premium first birthday portraits in Ahmedabad.
+          Tirth Modelling Studio offers luxury cake smash photography with cinematic birthday themes, premium props and creative first birthday portraits in Ahmedabad.
         </p>
 
         <div class="cta-buttons">
@@ -603,11 +603,11 @@
 
       "Outdoor Cake Smash Photography Ahmedabad",
 
-      "Outdoor Birthday Photoshoot Ahmedabad",
+      "Luxury Outdoor Birthday Photoshoot Ahmedabad",
 
-      "Luxury Outdoor Cake Smash Photography Ahmedabad",
+      "Creative Outdoor Baby Photography Ahmedabad",
 
-      "Creative Outdoor Baby Photography Ahmedabad"
+      "Outdoor First Birthday Photography Ahmedabad"
 
     ];
 
@@ -630,26 +630,74 @@
       let loaded = 0;
 
       while (
-        loaded < imagesPerLoad &&
-        currentImage <= totalImages
+        loaded < imagesPerLoad
       ) {
 
+        let i;
+
+        // MIXED ORDER
+
+        const adjusted =
+          currentImage - 1;
+
+        const group =
+          Math.floor(adjusted / 2);
+
+        const type =
+          adjusted % 2;
+
+        // OUTDOOR
+
+        if (type === 0) {
+
+          i = group + 1;
+
+          if (i > 116) {
+
+            currentImage++;
+            continue;
+
+          }
+
+        }
+
+        // INDOOR
+
+        else {
+
+          i = group + 117;
+
+          if (i > 300) {
+
+            currentImage++;
+            continue;
+
+          }
+
+        }
+
+        // CATEGORY
+
         const category =
-          currentImage <= 116
+          i <= 116
           ? "outdoor"
           : "indoor";
+
+        // ALT TEXT
 
         const altText =
 
           category === "outdoor"
 
           ? outdoorAltTexts[
-              currentImage % outdoorAltTexts.length
+              i % outdoorAltTexts.length
             ]
 
           : indoorAltTexts[
-              currentImage % indoorAltTexts.length
+              i % indoorAltTexts.length
             ];
+
+        // CREATE ITEM
 
         const item =
           document.createElement("div");
@@ -660,7 +708,7 @@
         item.innerHTML = `
 
           <img
-            src="assets/cakesmash/cakesmash-${currentImage}.jpg"
+            src="assets/cakesmash/cakesmash-${i}.jpg"
             alt="${altText}"
             loading="lazy"
           >
@@ -676,8 +724,10 @@
 
       applyFilters();
 
+      // HIDE BUTTON
+
       if (
-        currentImage > totalImages
+        currentImage > 300
       ) {
 
         document
