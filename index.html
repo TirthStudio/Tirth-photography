@@ -243,7 +243,7 @@
 
     /* HERO */
 
-   .hero{
+.hero{
   height:100vh;
   position:relative;
   overflow:hidden;
@@ -384,6 +384,56 @@
     .btn:hover{
       transform:translateY(-3px);
     }
+
+    /* LAZY REVEAL EFFECT */
+
+.reveal{
+  opacity:0;
+  transform:translateY(80px);
+  transition:
+    opacity 1s ease,
+    transform 1s ease;
+}
+
+.reveal.active{
+  opacity:1;
+  transform:translateY(0);
+}
+
+/* DIFFERENT REVEAL DIRECTIONS */
+
+.reveal-left{
+  opacity:0;
+  transform:translateX(-100px);
+  transition:1s ease;
+}
+
+.reveal-left.active{
+  opacity:1;
+  transform:translateX(0);
+}
+
+.reveal-right{
+  opacity:0;
+  transform:translateX(100px);
+  transition:1s ease;
+}
+
+.reveal-right.active{
+  opacity:1;
+  transform:translateX(0);
+}
+
+.reveal-zoom{
+  opacity:0;
+  transform:scale(0.85);
+  transition:1s ease;
+}
+
+.reveal-zoom.active{
+  opacity:1;
+  transform:scale(1);
+}
 
     /* SECTION TITLE */
 
@@ -870,22 +920,22 @@
 
       <div class="usp-grid">
 
-        <div class="usp-box">
+        <div class="usp-box reveal-zoom">
           <h3>1500+</h3>
          <p>Theme options with costumes and accessories.</p>
         </div>
 
-        <div class="usp-box">
+        <div class="usp-box reveal-zoom">
           <h3>100MP Camera</h3>
           <p>Ultra high resolution premium photography.</p>
         </div>
 
-        <div class="usp-box">
+        <div class="usp-box reveal-zoom">
           <h3>Indoor + Outdoor</h3>
           <p>Indoor and outdoor photography at one place.</p>
         </div>
 
-        <div class="usp-box">
+        <div class="usp-box reveal-zoom">
           <h3>Drone Reels</h3>
           <p>Cinematic reels and aerial drone videography.</p>
         </div>
@@ -902,7 +952,7 @@
 
     <div class="container">
 
-      <div class="section-title">
+      <div class="section-title reveal">
 
         <p>OUR SERVICES</p>
 
@@ -914,7 +964,7 @@
 
       <div class="services-grid">
 
-       <a href="newborn.html" class="service-card">
+       <a href="newborn.html" class="service-card reveal">
 
   <img
     src="assets/newborn/newborn-cover.jpg"
@@ -933,7 +983,7 @@
 
 </a>
 
-       <a href="kids.html" class="service-card">
+       <a href="kids.html" class="service-card reveal">
 
   <img
     src="assets/kids/kids-cover.jpg"
@@ -952,7 +1002,7 @@
 
 </a>
 
-       <a href="maternity.html" class="service-card">
+       <a href="maternity.html" class="service-card reveal">
 
   <img
     src="assets/maternity/maternity-cover.jpg"
@@ -971,7 +1021,7 @@
 
 </a>
 
-        <a href="family.html" class="service-card">
+        <a href="family.html" class="service-card reveal">
 
   <img
     src="assets/family/family-cover.jpg"
@@ -990,7 +1040,7 @@
 
 </a>
 
-        <a href="prewedding.html" class="service-card">
+        <a href="prewedding.html" class="service-card reveal">
 
   <img
     src="assets/prewedding/prewedding-cover.jpg"
@@ -1009,7 +1059,7 @@
 
 </a>
 
-        <a href="cakesmash.html" class="service-card">
+        <a href="cakesmash.html" class="service-card reveal">
 
   <img
     src="assets/cakesmash/cakesmash-cover.jpg"
@@ -1040,7 +1090,7 @@
 
     <div class="container">
 
-      <div class="section-title">
+      <div class="section-title reveal">
 
         <p>CINEMATIC REELS</p>
 
@@ -1057,7 +1107,7 @@
         <a
           href="https://www.instagram.com/reel/DUkXVBDjA8n/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==/"
           target="_blank"
-          class="reel-card"
+          class="reel-card reveal-left"
         >
 
           <img
@@ -1080,7 +1130,7 @@
         <a
           href="https://www.instagram.com/reel/DXosP3qDKL2/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==/"
           target="_blank"
-          class="reel-card"
+          class="reel-card reveal-right"
         >
 
           <img
@@ -1110,7 +1160,7 @@
 
     <div class="container">
 
-      <div class="section-title">
+      <div class="section-title reveal">
 
         <p>CREATIVE PHOTO EDITING</p>
 
@@ -1284,6 +1334,39 @@
   closeMenu.addEventListener('click', () => {
     mobileMenu.classList.remove('active');
   });
+
+</script>
+
+<script>
+
+const reveals = document.querySelectorAll(
+  '.reveal, .reveal-left, .reveal-right, .reveal-zoom'
+);
+
+function revealOnScroll(){
+
+  reveals.forEach(item => {
+
+    const windowHeight = window.innerHeight;
+
+    const revealTop =
+      item.getBoundingClientRect().top;
+
+    const revealPoint = 120;
+
+    if(revealTop < windowHeight - revealPoint){
+
+      item.classList.add('active');
+
+    }
+
+  });
+
+}
+
+window.addEventListener('scroll', revealOnScroll);
+
+revealOnScroll();
 
 </script>
 
