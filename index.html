@@ -241,6 +241,42 @@
 
 }
 
+<script>
+
+/* LAZY REVEAL */
+
+const reveals = document.querySelectorAll(
+  '.reveal, .reveal-left, .reveal-right, .reveal-zoom'
+);
+
+window.addEventListener('scroll', revealSections);
+
+function revealSections(){
+
+  const triggerBottom =
+    window.innerHeight * 0.88;
+
+  reveals.forEach(section => {
+
+    const sectionTop =
+      section.getBoundingClientRect().top;
+
+    if(sectionTop < triggerBottom){
+
+      section.classList.add('active');
+
+    }
+
+  });
+
+}
+
+/* INITIAL LOAD */
+
+revealSections();
+
+</script>    
+
     /* HERO */
 
 .hero{
@@ -1172,7 +1208,7 @@
 
       <div class="editing-wrapper">
 
-        <div class="editing-content">
+        <div class="editing-content reveal-left">
 
           <p>
             Our premium creative editing transforms ordinary photos into cinematic artwork while keeping skin tones, lighting and emotions natural.
@@ -1186,7 +1222,7 @@
 
         <!-- BEFORE AFTER -->
 
-        <div class="before-after-container">
+        <div class="before-after-container reveal-right">
 
           <img
             src="assets/before-edit.jpg"
@@ -1232,7 +1268,7 @@
 
     <div class="container">
 
-      <div class="contact-box">
+      <div class="contact-box reveal">
 
         <h2>
           Book Your Premium Photoshoot
