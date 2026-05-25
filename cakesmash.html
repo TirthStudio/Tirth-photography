@@ -627,116 +627,117 @@
 
     function loadImages() {
 
-      let loaded = 0;
+  let loaded = 0;
 
-      while (
-        loaded < imagesPerLoad
-      ) {
+  while (
+    loaded < imagesPerLoad &&
+    currentImage <= totalImages * 2
+  ) {
 
-        let i;
+    let i;
 
-        // MIXED ORDER
+    // MIXED ORDER
 
-        const adjusted =
-          currentImage - 1;
+    const adjusted =
+      currentImage - 1;
 
-        const group =
-          Math.floor(adjusted / 2);
+    const group =
+      Math.floor(adjusted / 2);
 
-        const type =
-          adjusted % 2;
+    const type =
+      adjusted % 2;
 
-        // OUTDOOR
+    // OUTDOOR
 
-        if (type === 0) {
+    if (type === 0) {
 
-          i = group + 1;
+      i = group + 1;
 
-          if (i > 116) {
+      if (i > 116) {
 
-            currentImage++;
-            continue;
-
-          }
-
-        }
-
-        // INDOOR
-
-        else {
-
-          i = group + 117;
-
-          if (i > 300) {
-
-            currentImage++;
-            continue;
-
-          }
-
-        }
-
-        // CATEGORY
-
-        const category =
-          i <= 116
-          ? "outdoor"
-          : "indoor";
-
-        // ALT TEXT
-
-        const altText =
-
-          category === "outdoor"
-
-          ? outdoorAltTexts[
-              i % outdoorAltTexts.length
-            ]
-
-          : indoorAltTexts[
-              i % indoorAltTexts.length
-            ];
-
-        // CREATE ITEM
-
-        const item =
-          document.createElement("div");
-
-        item.className =
-          `gallery-item ${category}`;
-
-        item.innerHTML = `
-
-          <img
-            src="assets/cakesmash/cakesmash-${i}.jpg"
-            alt="${altText}"
-            loading="lazy"
-          >
-
-        `;
-
-        gallery.appendChild(item);
-
-        loaded++;
         currentImage++;
-
-      }
-
-      applyFilters();
-
-      // HIDE BUTTON
-
-      if (
-        currentImage > 300
-      ) {
-
-        document
-          .getElementById("load-more-btn")
-          .style.display = "none";
+        continue;
 
       }
 
     }
+
+    // INDOOR
+
+    else {
+
+      i = group + 117;
+
+      if (i > 232) {
+
+        currentImage++;
+        continue;
+
+      }
+
+    }
+
+    // CATEGORY
+
+    const category =
+      i <= 116
+      ? "outdoor"
+      : "indoor";
+
+    // ALT TEXT
+
+    const altText =
+
+      category === "outdoor"
+
+      ? outdoorAltTexts[
+          i % outdoorAltTexts.length
+        ]
+
+      : indoorAltTexts[
+          i % indoorAltTexts.length
+        ];
+
+    // CREATE ITEM
+
+    const item =
+      document.createElement("div");
+
+    item.className =
+      `gallery-item ${category}`;
+
+    item.innerHTML = `
+
+      <img
+        src="assets/cakesmash/cakesmash-${i}.jpg"
+        alt="${altText}"
+        loading="lazy"
+      >
+
+    `;
+
+    gallery.appendChild(item);
+
+    loaded++;
+    currentImage++;
+
+  }
+
+  applyFilters();
+
+  // HIDE BUTTON WHEN FINISHED
+
+  if (
+    currentImage > totalImages * 2
+  ) {
+
+    document
+      .getElementById("load-more-btn")
+      .style.display = "none";
+
+  }
+
+}
 
     // FILTER FUNCTION
 
