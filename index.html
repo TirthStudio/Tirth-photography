@@ -663,6 +663,56 @@
       z-index:10;
     }
 
+/* CREATIVE PORTFOLIO */
+
+.creative-slider{
+  width:100%;
+  overflow:hidden;
+  position:relative;
+}
+
+.creative-track{
+  display:flex;
+  gap:24px;
+  width:max-content;
+  animation:creativeScroll 40s linear infinite;
+}
+
+.creative-track img{
+  width:320px;
+  height:520px;
+  object-fit:cover;
+  border-radius:26px;
+  border:1px solid rgba(255,255,255,0.08);
+  transition:0.4s;
+  flex-shrink:0;
+}
+
+.creative-track img:hover{
+  transform:scale(1.04);
+}
+
+@keyframes creativeScroll{
+
+  from{
+    transform:translateX(0);
+  }
+
+  to{
+    transform:translateX(-50%);
+  }
+
+}
+
+@media(max-width:991px){
+
+  .creative-track img{
+    width:240px;
+    height:380px;
+  }
+
+}
+
     /* CONTACT */
 
     .contact-box{
@@ -1225,6 +1275,45 @@
     </div>
 
   </section>
+
+  <!-- CREATIVE EDIT PORTFOLIO -->
+
+<section class="creative-portfolio reveal">
+
+  <div class="container">
+
+    <div class="section-title">
+
+      <p>CREATIVE EDIT PORTFOLIO</p>
+
+      <h2>
+        Fantasy Style Photo Manipulation
+      </h2>
+
+    </div>
+
+    <div class="creative-slider">
+
+      <div class="creative-track">
+
+        <img src="assets/creative/creative-1.jpg" alt="Creative Edit">
+        <img src="assets/creative/creative-2.jpg" alt="Creative Edit">
+        <img src="assets/creative/creative-3.jpg" alt="Creative Edit">
+        <img src="assets/creative/creative-4.jpg" alt="Creative Edit">
+        <img src="assets/creative/creative-5.jpg" alt="Creative Edit">
+        <img src="assets/creative/creative-6.jpg" alt="Creative Edit">
+        <img src="assets/creative/creative-7.jpg" alt="Creative Edit">
+        <img src="assets/creative/creative-8.jpg" alt="Creative Edit">
+        <img src="assets/creative/creative-9.jpg" alt="Creative Edit">
+        <img src="assets/creative/creative-10.jpg" alt="Creative Edit">
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
 
   <!-- CONTACT -->
 
